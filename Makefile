@@ -17,8 +17,8 @@ $(OBJDIR)/%.o: source/%.cpp
 
 all: clean $(TARGET)
 
-test:
-	echo $(OBJECTS)
+exec:
+	@bin/trump
 
 clean:
 	rm -f $(OBJECTS) $(TARGET)
