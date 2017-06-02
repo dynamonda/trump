@@ -2,9 +2,13 @@
 #include <card.h>
 
 Deck::Deck(){
-    this->number = 53;
+    cards = new Card(5);
 }
 
 Deck::~Deck(){
+    delete cards;
+}
 
+int Deck::getCardNumber(){
+    return this->cards->num();
 }

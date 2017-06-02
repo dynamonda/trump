@@ -7,6 +7,7 @@
 int main(){
 	std::cout << "Hello world" << std::endl;
 	Deck *deck = new Deck();
-	std::cout << deck->getNumber() << std::endl;
+	std::cout << deck->getCardNumber() << std::endl;
+	delete deck;
 	return 0;
 }
