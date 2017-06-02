@@ -7,12 +7,9 @@ class Card{
 private:
     int number;
 public:
-    Card(int num){
-        this->number = num;
-    }
-    int num(){
-        return this->number;
-    }
+    Card(int num);
+    ~Card();
+    int getNumber();
 };
 
 #endif
