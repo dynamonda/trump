@@ -1,3 +1,8 @@
+// card.h
+
+#ifndef _CARD_
+#define _CARD_
+
 class Card{
 private:
     int number;
@@ -9,3 +14,5 @@ public:
         return this->number;
     }
 };
+
+#endif
