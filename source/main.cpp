@@ -5,7 +5,7 @@
 
 int main(){
 	std::cout << "Hello world" << std::endl;
-	Card card;
+	Card card(3);
 	std::cout << card.num() << std::endl;
 	return 0;
 }
