@@ -10,5 +10,5 @@ Deck::~Deck(){
 }
 
 int Deck::getCardNumber(){
-    return this->cards->num();
+    return this->cards->getNumber();
 }

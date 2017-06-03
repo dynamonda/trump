@@ -5,10 +5,11 @@
 
 class Card{
 private:
-    int number;
+    int keyNumber;
 public:
     Card(int num);
     ~Card();
+    
     int getNumber();
 };
 

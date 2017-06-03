@@ -1,7 +1,7 @@
 #include <card.h>
 
 Card::Card(int num){
-    this->number = num;
+    this->keyNumber = num;
 }
 
 Card::~Card(){
@@ -9,5 +9,5 @@ Card::~Card(){
 }
 
 int Card::getNumber(){
-    return this->number;
+    return this->keyNumber;
 }
