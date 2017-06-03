@@ -1,4 +1,5 @@
 #include <deck.h>
+#include <suit.h>
 #include <card.h>
 
 Deck::Deck(){

@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
-#include <card.h>
 #include <deck.h>
 
 int main(){

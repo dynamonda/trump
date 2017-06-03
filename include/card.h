@@ -9,8 +9,9 @@ private:
 public:
     Card(int num);
     ~Card();
-    
+
     int getNumber();
+    Suit getSuit();
 };
 
 #endif
