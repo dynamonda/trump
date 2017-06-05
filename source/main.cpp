@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <vector>
 #include <deck.h>
 #include <suit.h>
 #include <card.h>
@@ -15,7 +16,9 @@ int main(){
 
 	std::cout << joker->getSuit() << std::endl;
 	std::cout << card->getSuit() << std::endl;
-	
+
+	deck->print();
+
 	delete card;
 	delete joker;
 	delete deck;

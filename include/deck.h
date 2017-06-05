@@ -8,11 +8,14 @@ class Card;
 class Deck{
 private:
     int number;
-    Card* cards;
+    Card* card;
+    std::vector<Card*> cards;
 
 public:
     Deck();
     ~Deck();
+
+    void print();
 
     int getNumber(){
         return this->number;
