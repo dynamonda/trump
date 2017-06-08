@@ -11,8 +11,11 @@ int main(){
 	std::cout << "Hello world" << std::endl;
 	Deck *deck = new Deck();
 
+	deck->shuffle(100);
 	deck->print();
 	
+	//deck->shuffle(10);
+
 	delete deck;
 	return 0;
 }

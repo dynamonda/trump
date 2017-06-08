@@ -19,6 +19,8 @@ public:
     int getNumber(){
         return this->number;
     }
+
+    void shuffle(int times);
 };
 
 #endif
