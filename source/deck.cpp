@@ -8,23 +8,25 @@
 Deck::Deck(){
     std::cout << "Deck constructor" << std::endl;
     card = new Card(5);
-    std::cout << "test" << std::endl;
-    for(int i=0; i<5; ++i){
+    for(int i=0; i<=52; ++i){
         cards.push_back(new Card(i));
     }
 }
 
 Deck::~Deck(){
     delete card;
-    for(int i=0; i<5; ++i){
+    for(int i=0; i<=52; ++i){
         delete cards[i];
     }
 }
 
 void Deck::print(){
-    for(int i=0; i<5; ++i){
-        std::cout << cards[i]->getSuit() << ":" 
-        << cards[i]->getRank() << std::endl;
+    for(int i=0; i<=52; ++i){
+        std::cout 
+            << "[" << i << "]"
+            << cards[i]->getSuit() << ":" 
+            << cards[i]->getRank() 
+            << std::endl;
     }
 }
 
