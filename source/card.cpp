@@ -1,4 +1,5 @@
 #include <suit.h>
+#include <rank.h>
 #include <card.h>
 
 Card::Card(int num){
@@ -18,5 +19,13 @@ Suit Card::getSuit(){
         return Suit::Joker;
     } else {
         return Suit::Diamonds;
+    }
+}
+
+Rank Card::getRank(){
+    if(keyNumber==0){
+        return Rank::JOKER;
+    } else {
+        return Rank(keyNumber % 13);
     }
 }

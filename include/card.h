@@ -12,6 +12,7 @@ public:
 
     int getNumber();
     Suit getSuit();
+    Rank getRank();
 };
 
 #endif

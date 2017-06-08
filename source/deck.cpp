@@ -1,6 +1,7 @@
 #include <vector>
 #include <deck.h>
 #include <suit.h>
+#include <rank.h>
 #include <card.h>
 #include <iostream>
 
@@ -22,7 +23,8 @@ Deck::~Deck(){
 
 void Deck::print(){
     for(int i=0; i<5; ++i){
-        std::cout << cards[i]->getNumber() << std::endl;
+        std::cout << cards[i]->getSuit() << ":" 
+        << cards[i]->getRank() << std::endl;
     }
 }
 

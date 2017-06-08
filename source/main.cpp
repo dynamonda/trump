@@ -4,6 +4,7 @@
 #include <vector>
 #include <deck.h>
 #include <suit.h>
+#include <rank.h>
 #include <card.h>
 
 int main(){
