@@ -32,7 +32,7 @@ void Deck::print(){
     }
 }
 
-void Deck::shuffle(int times=100){
+void Deck::shuffle(int times){
     std::cout << "Shuffle " << times << std::endl;
     std::random_device rnd;
     std::mt19937 mt(rnd());

@@ -20,7 +20,7 @@ public:
         return this->number;
     }
 
-    void shuffle(int times);
+    void shuffle(int times=100);
 };
 
 #endif
