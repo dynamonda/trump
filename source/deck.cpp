@@ -4,6 +4,7 @@
 #include <rank.h>
 #include <card.h>
 #include <iostream>
+#include <utility>
 
 Deck::Deck(){
     for(int i=0; i<=52; ++i){
@@ -21,6 +22,7 @@ Deck::~Deck(){
 }
 
 void Deck::print(){
+    std::swap(cards[10], cards[20]);
     for(int i=0; i<cards.size(); ++i){
         std::cout 
             << "[" << i << "]"
@@ -28,8 +30,4 @@ void Deck::print(){
             << cards[i]->getRank() 
             << std::endl;
     }
-}
-
-int Deck::getCardNumber(){
-    return this->card->getNumber();
 }

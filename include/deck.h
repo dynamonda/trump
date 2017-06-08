@@ -8,7 +8,6 @@ class Card;
 class Deck{
 private:
     int number;
-    Card* card;
     std::vector<Card*> cards;
 
 public:
@@ -20,8 +19,6 @@ public:
     int getNumber(){
         return this->number;
     }
-
-    int getCardNumber();
 };
 
 #endif
