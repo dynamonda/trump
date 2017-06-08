@@ -18,7 +18,7 @@ Suit Card::getSuit(){
     if(keyNumber==0){
         return Suit::Joker;
     } else {
-        return Suit::Diamonds;
+        return Suit(keyNumber / 14);
     }
 }
 
@@ -26,6 +26,10 @@ Rank Card::getRank(){
     if(keyNumber==0){
         return Rank::JOKER;
     } else {
-        return Rank(keyNumber % 13);
+        int num = this->keyNumber;
+        while(num > 13){
+            num = num - 13;
+        }
+        return Rank(num);
     }
 }
