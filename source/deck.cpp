@@ -19,6 +19,7 @@ Deck::Deck(){
 Deck::~Deck(){
     for(int i=0; i<cards.size(); ++i){
         delete cards[i];
+        cards[i] = nullptr;
     }
 }
 
