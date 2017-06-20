@@ -28,7 +28,7 @@ void Deck::print(){
         int rank = int(cards[i]->getRank());
         std::cout 
             << "[" << i << "]"
-            << cards[i]->getSuit() << ":" 
+            << cards[i]->getSuitString() << ":" 
             << rank
             << std::endl;
     }

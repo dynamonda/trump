@@ -3,7 +3,7 @@
 #ifndef _SUIT_
 #define _SUIT_
 
-enum Suit{
+enum class Suit {
     Joker,
     Spades,
     Hearts,

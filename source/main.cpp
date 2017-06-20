@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <iostream>
+#include <string>
 #include <vector>
 #include <deck.h>
 #include <suit.h>
@@ -13,7 +14,7 @@ int main(){
 	CardManager *cardManager = new CardManager();
 	Deck *deck = new Deck();
 
-	deck->shuffle();
+	//deck->shuffle();
 	deck->print();
 
 	delete cardManager;

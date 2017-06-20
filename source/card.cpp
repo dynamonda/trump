@@ -1,3 +1,5 @@
+#include <string>
+#include <cmath>
 #include <suit.h>
 #include <rank.h>
 #include <card.h>
@@ -18,7 +20,24 @@ Suit Card::getSuit(){
     if(keyNumber==0){
         return Suit::Joker;
     } else {
-        return Suit(keyNumber / 14);
+        return Suit(std::ceil(keyNumber / 14));
+    }
+}
+
+std::string Card::getSuitString(){
+    switch(getSuit()){
+        case Suit::Joker:
+            return "Joker"; break;
+        case Suit::Spades:
+            return "Spades"; break;
+        case Suit::Hearts:
+            return "Hearts"; break;
+        case Suit::Diamonds:
+            return "Diamonds"; break;
+        case Suit::Clubs:
+            return "Culubs"; break;
+        default:
+            return "NotDefined";
     }
 }
 
