@@ -3,7 +3,7 @@
 #ifndef _RANK_
 #define _RANK_
 
-enum Rank{
+enum class Rank : int{
     JOKER   = 0,
     ACE     = 1,
     TWO     = 2,

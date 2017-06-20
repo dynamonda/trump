@@ -25,10 +25,11 @@ Deck::~Deck(){
 
 void Deck::print(){
     for(int i=0; i<cards.size(); ++i){
+        int rank = int(cards[i]->getRank());
         std::cout 
             << "[" << i << "]"
             << cards[i]->getSuit() << ":" 
-            << cards[i]->getRank() 
+            << rank
             << std::endl;
     }
 }
