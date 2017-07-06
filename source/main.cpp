@@ -19,6 +19,7 @@ int main(){
 
 	//deck->shuffle();
 	//deck->print();
+	cardManager->print();
 
 	return 0;
 }

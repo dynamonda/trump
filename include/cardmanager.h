@@ -11,6 +11,8 @@ private:
 public:
     CardManager();
     ~CardManager();
+
+    void print();
 };
 
 #endif

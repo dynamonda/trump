@@ -12,13 +12,14 @@ CardManager::CardManager(){
         auto card = std::make_shared<Card>(i);
         cards.push_back(card);
     }
-
-    for(auto c : cards){
-        std::cout << c << ":" << c->getInfoString() <<std::endl;
-    }
 }
 
 CardManager::~CardManager(){
 
 }
 
+void CardManager::print(){
+    for(auto c : cards){
+        std::cout << c << ":" << c->getInfoString() <<std::endl;
+    }
+}
