@@ -8,7 +8,7 @@ class Card;
 class Deck{
 private:
     int number;
-    std::vector<Card*> cards;
+    std::vector<std::shared_ptr<Card>> cards;
 
 public:
     Deck();
