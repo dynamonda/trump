@@ -1,5 +1,5 @@
 COMPILER = g++
-CFLAGS   = -g -Wall -O2 -std=c++11
+CFLAGS   = -g -Wall -O2 -std=c++14
 LDFLAGS  =
 LIBS     =
 INCLUDE  = -I./include
