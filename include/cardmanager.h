@@ -4,7 +4,10 @@
 #define _CARDMANAGER_
 
 class CardManager{
-
+private:
+public:
+    CardManager();
+    ~CardManager();
 };
 
 #endif
