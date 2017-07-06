@@ -15,10 +15,10 @@ int main(){
 	std::cout << "Hello world" << std::endl;
 
 	std::unique_ptr<CardManager> cardManager = std::make_unique<CardManager>();
-	std::unique_ptr<Deck> deck = std::make_unique<Deck>();
+	//std::unique_ptr<Deck> deck = std::make_unique<Deck>();
 
 	//deck->shuffle();
-	deck->print();
+	//deck->print();
 
 	return 0;
 }
