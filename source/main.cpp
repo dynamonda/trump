@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <memory>
+
 #include <deck.h>
 #include <suit.h>
 #include <rank.h>
@@ -12,12 +14,11 @@
 int main(){
 	std::cout << "Hello world" << std::endl;
 	CardManager *cardManager = new CardManager();
-	Deck *deck = new Deck();
+	std::unique_ptr<Deck> deck = std::make_unique<Deck>();
 
 	//deck->shuffle();
 	deck->print();
 
 	delete cardManager;
-	delete deck;
 	return 0;
 }
