@@ -4,8 +4,8 @@
 #define _SUIT_
 
 enum class Suit {
-    Joker,
-    Spades,
+    Joker    = 0,
+    Spades   = 1,
     Hearts,
     Diamonds,
     Clubs,

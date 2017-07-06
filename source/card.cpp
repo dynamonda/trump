@@ -20,7 +20,7 @@ Suit Card::getSuit(){
     if(keyNumber==0){
         return Suit::Joker;
     } else {
-        return Suit(std::ceil(keyNumber / 14));
+        return Suit(std::ceil(keyNumber / 14.0));
     }
 }
 
