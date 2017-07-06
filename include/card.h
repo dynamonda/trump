@@ -14,6 +14,7 @@ public:
     Suit getSuit();
     std::string getSuitString();
     Rank getRank();
+    std::string getInfoString();
 };
 
 #endif

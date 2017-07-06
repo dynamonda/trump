@@ -52,3 +52,24 @@ Rank Card::getRank(){
         return Rank(num);
     }
 }
+
+std::string Card::getInfoString(){
+    std::string str = "";
+    str += std::to_string(int(getRank()));
+    
+    switch(getSuit()){
+        case Suit::Joker:
+            str += " Joker"; break;
+        case Suit::Spades:
+            str += " Spades"; break;
+        case Suit::Hearts:
+            str += " Hearts"; break;
+        case Suit::Diamonds:
+            str += " Diamonds"; break;
+        case Suit::Clubs:
+            str += " Culubs"; break;
+        default:
+            str += " NotDefined"; break;
+    }
+    return str;
+}
