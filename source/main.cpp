@@ -13,12 +13,12 @@
 
 int main(){
 	std::cout << "Hello world" << std::endl;
-	CardManager *cardManager = new CardManager();
+
+	std::unique_ptr<CardManager> cardManager = std::make_unique<CardManager>();
 	std::unique_ptr<Deck> deck = std::make_unique<Deck>();
 
 	//deck->shuffle();
 	deck->print();
 
-	delete cardManager;
 	return 0;
 }
