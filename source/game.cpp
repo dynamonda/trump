@@ -10,6 +10,11 @@ Game::~Game(){
 
 }
 
+bool Game::setup(){
+    std::cout << "Setup Success!" << std::endl;
+    return true;
+}
+
 void Game::update(){
     std::cout << "Game Update" << std::endl;
     gameEndFlag = true;
