@@ -10,9 +10,12 @@
 #include <rank.h>
 #include <card.h>
 #include <cardmanager.h>
+#include <game.h>
 
 int main(){
 	std::cout << "Hello world" << std::endl;
+
+	std::unique_ptr<Game> game = std::make_unique<Game>();
 
 	std::unique_ptr<Deck> deck = std::make_unique<Deck>();
 
