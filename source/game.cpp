@@ -17,7 +17,7 @@ Game::~Game(){
 bool Game::setup(){
     std::cout << "Setup Success!" << std::endl;
 
-	std::unique_ptr<Deck> deck = std::make_unique<Deck>();
+	deck = std::make_unique<Deck>();
 
 	deck->shuffle();
 	deck->print();
