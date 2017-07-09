@@ -3,7 +3,9 @@
 #include <iostream>
 
 #include <deck.h>
+#include <player.h>
 #include <game.h>
+
 
 Game::Game(){
     gameEndFlag = false;
@@ -18,6 +20,7 @@ bool Game::setup(){
     std::cout << "Setup Success!" << std::endl;
 
 	deck = std::make_unique<Deck>();
+    player = std::make_unique<Player>();
 
     return true;
 }
