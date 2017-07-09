@@ -17,6 +17,10 @@ int main(){
 
 	std::unique_ptr<Game> game = std::make_unique<Game>();
 
+	while( !(game->isEnd()) ){
+		game->update();
+	}
+
 	std::unique_ptr<Deck> deck = std::make_unique<Deck>();
 
 	deck->shuffle();
