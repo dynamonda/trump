@@ -19,14 +19,15 @@ bool Game::setup(){
 
 	deck = std::make_unique<Deck>();
 
-	deck->shuffle();
-	deck->print();
-
     return true;
 }
 
 void Game::update(){
     std::cout << "Game Update" << std::endl;
+
+    deck->shuffle();
+	deck->print();
+
     gameEndFlag = true;
 }
 
