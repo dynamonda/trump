@@ -8,7 +8,10 @@
 #include <random>
 
 Deck::Deck(){
-
+    for(int i=0; i<=52; ++i){
+        auto card = std::make_shared<Card>(i);
+        cards.push_back(card);
+    }
 }
 
 Deck::~Deck(){
