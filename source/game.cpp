@@ -1,12 +1,11 @@
-#include <vector>
-#include <memory>
 #include <iostream>
+#include <string>
 #include <vector>
+#include <fstream>
 
 #include <deck.h>
 #include <player.h>
 #include <game.h>
-
 
 Game::Game(){
     gameEndFlag = false;
@@ -19,15 +18,13 @@ Game::~Game(){
 
 bool Game::setup(){
 	std::cout << "Setup Start" << std::endl;
+    
     deck = std::make_unique<Deck>();
-
+    
+    players.push_back(std::make_unique<Player>());
+    players.push_back(std::make_unique<Player>());
+    std::cout << "Player Num: " << players.size() << std::endl;
     std::cout << "Setup Success!" << std::endl;
-    
-    player = std::make_unique<Player>();
-    //std::cout << player << std::endl;
-    
-    //players.push_back(player);
-    
     return true;
 }
 
