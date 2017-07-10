@@ -18,6 +18,16 @@ Deck::~Deck(){
 
 }
 
+std::shared_ptr<Card> Deck::draw(){
+    if (cards.size() <= 0) {
+        return nullptr;
+    } else {
+        auto i = cards.begin();
+        
+        return *i;
+    }
+}
+
 void Deck::print(){
     for(int i=0; i<cards.size(); ++i){
         int rank = int(cards[i]->getRank());

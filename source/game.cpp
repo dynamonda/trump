@@ -5,6 +5,9 @@
 
 #include <deck.h>
 #include <player.h>
+#include <card.h>
+#include <suit.h>
+#include <rank.h>
 #include <game.h>
 
 Game::Game(){
@@ -32,7 +35,10 @@ void Game::update(){
     std::cout << "Game Update" << std::endl;
 
     deck->shuffle();
-	deck->print();
+	//deck->print();
+
+    auto card = deck->draw();
+    std::cout << card->getInfoString() << std::endl;
 
     gameEndFlag = true;
 }

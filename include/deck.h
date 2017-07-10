@@ -14,6 +14,8 @@ public:
     Deck();
     ~Deck();
 
+    std::shared_ptr<Card> draw();
+
     void print();
 
     int getNumber(){

@@ -8,6 +8,7 @@
 
 class Deck;
 class Player;
+class Card;
 
 class Game{
 private:
@@ -22,6 +23,8 @@ public:
 
     bool setup();
     void update();
+
+
     bool isEnd();
 };
 
