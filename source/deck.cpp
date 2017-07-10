@@ -6,6 +6,8 @@
 #include <iostream>
 #include <utility>
 #include <random>
+#include <algorithm>
+#include <memory>
 
 Deck::Deck(){
     for(int i=0; i<=52; ++i){
@@ -23,8 +25,10 @@ std::shared_ptr<Card> Deck::draw(){
         return nullptr;
     } else {
         auto i = cards.begin();
-        
-        return *i;
+        auto card = *i;
+        std::shared_ptr<Card> p_card(new Card(*card));
+        cards.erase(i);
+        return p_card;
     }
 }
 
