@@ -22,12 +22,8 @@ bool Game::setup(){
     deck = std::make_unique<Deck>();
 
     std::cout << "Setup Success!" << std::endl;
-
-    //Player* player = new Player();
-    //delete player;
-    //player = nullptr;
     
-    //auto player = std::make_shared<Player>();
+    player = std::make_unique<Player>();
     //std::cout << player << std::endl;
     
     //players.push_back(player);

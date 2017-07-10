@@ -10,6 +10,7 @@ class Game{
 private:
     bool gameEndFlag;
     std::unique_ptr<Deck> deck;
+    std::unique_ptr<Player> player;
 
 public:
     Game();
