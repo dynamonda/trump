@@ -39,6 +39,8 @@ void Game::update(){
     std::cout << card->getInfoString() << std::endl;
 
     deck->print();
+
+    std::cout << players[0]->getHandsSize() << std::endl;
     gameEndFlag = true;
 }
 
