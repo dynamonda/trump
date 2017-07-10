@@ -15,6 +15,7 @@ public:
     Player();
     ~Player();
 
+    void insertCard(std::shared_ptr<Card> card);
     int getHandsSize();
 };
 

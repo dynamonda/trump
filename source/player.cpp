@@ -10,6 +10,10 @@ Player::~Player(){
     
 }
 
+void Player::insertCard(std::shared_ptr<Card> card){
+    hands.push_back(card);
+}
+
 int Player::getHandsSize(){
     return hands.size();
 }

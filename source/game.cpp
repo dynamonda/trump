@@ -40,6 +40,7 @@ void Game::update(){
 
     deck->print();
 
+    players[0]->insertCard(card);
     std::cout << players[0]->getHandsSize() << std::endl;
     gameEndFlag = true;
 }
