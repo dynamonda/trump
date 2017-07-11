@@ -3,9 +3,6 @@
 #ifndef _GAME_
 #define _GAME_
 
-#include <string>
-#include <vector>
-
 class Deck;
 class Player;
 class Card;

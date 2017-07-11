@@ -1,5 +1,7 @@
 #include <iostream>
-
+#include <memory>
+#include <vector>
+#include <card.h>
 #include <player.h>
 
 Player::Player(){
