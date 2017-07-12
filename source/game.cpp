@@ -7,6 +7,7 @@
 #include <player.h>
 #include <rank.h>
 #include <suit.h>
+#include <hand.h>
 #include <card.h>
 #include <game.h>
 
@@ -45,9 +46,10 @@ void Game::update(){
 
         std::cout << pl->getHandsSize() << std::endl;
         pl->printHands();
-    }
 
-    deck->print();
+        int handPower = int(pl->checkHands());
+        std::cout << "Hand : "<< handPower << std::endl;
+    }
 
     gameEndFlag = true;
 }

@@ -34,3 +34,7 @@ void Player::printHands(){
         std::cout << card->getInfoString() << std::endl;
     }
 }
+
+Hand Player::checkHands(){
+    return Hand::NO_PAIR;
+}

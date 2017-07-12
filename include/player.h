@@ -3,6 +3,8 @@
 #ifndef _PLAYER_
 #define _PLAYER_
 
+#include <hand.h>
+
 class Player{
 private:
     std::string name;
@@ -16,6 +18,8 @@ public:
     void insertCard(std::shared_ptr<Card> card);
     int getHandsSize();
     void printHands();
+    
+    Hand checkHands();
 };
 
 #endif
