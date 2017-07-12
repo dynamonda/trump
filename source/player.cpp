@@ -28,3 +28,9 @@ void Player::insertCard(std::shared_ptr<Card> card){
 int Player::getHandsSize(){
     return hands.size();
 }
+
+void Player::printHands(){
+    for(auto card : hands){
+        std::cout << card->getInfoString() << std::endl;
+    }
+}

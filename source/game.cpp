@@ -43,6 +43,7 @@ void Game::update(){
     }
 
     std::cout << players[0]->getHandsSize() << std::endl;
+    players[0]->printHands();
     gameEndFlag = true;
 }
 
