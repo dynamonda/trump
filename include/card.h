@@ -3,9 +3,6 @@
 #ifndef _CARD_
 #define _CARD_
 
-#include <suit.h>
-#include <rank.h>
-
 class Card{
 private:
     int keyNumber;

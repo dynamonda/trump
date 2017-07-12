@@ -5,6 +5,8 @@
 
 #include <deck.h>
 #include <player.h>
+#include <rank.h>
+#include <suit.h>
 #include <card.h>
 #include <game.h>
 
@@ -22,8 +24,8 @@ bool Game::setup(){
     
     deck = std::make_unique<Deck>();
     
-    players.push_back(std::make_unique<Player>());
-    players.push_back(std::make_unique<Player>());
+    players.push_back(std::make_unique<Player>("Taro"));
+    players.push_back(std::make_unique<Player>("Hanako"));
     std::cout << "Player Num: " << players.size() << std::endl;
     std::cout << "Setup Success!" << std::endl;
     return true;

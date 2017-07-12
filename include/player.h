@@ -5,10 +5,12 @@
 
 class Player{
 private:
+    std::string name;
     std::vector<std::shared_ptr<Card>> hands;
 
 public:
     Player();
+    Player(std::string name);
     ~Player();
 
     void insertCard(std::shared_ptr<Card> card);
