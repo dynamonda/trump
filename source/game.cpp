@@ -37,12 +37,11 @@ void Game::update(){
     deck->shuffle();
     deck->print();
 
-    auto card = deck->draw();
-    std::cout << card->getInfoString() << std::endl;
+    while(players[0]->getHandsSize() < 5){
+        auto card = deck->draw();
+        players[0]->insertCard(card);
+    }
 
-    deck->print();
-
-    players[0]->insertCard(card);
     std::cout << players[0]->getHandsSize() << std::endl;
     gameEndFlag = true;
 }
