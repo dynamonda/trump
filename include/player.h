@@ -19,7 +19,7 @@ public:
     int getHandsSize();
     void printHands();
     
-    Hand checkHands();
+    std::shared_ptr<Hand> checkHands();
 };
 
 #endif

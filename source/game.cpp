@@ -47,8 +47,12 @@ void Game::update(){
         std::cout << pl->getHandsSize() << std::endl;
         pl->printHands();
 
-        int handPower = int(pl->checkHands());
-        std::cout << "Hand : "<< handPower << std::endl;
+        auto hand = pl->checkHands();
+        if(hand != nullptr){
+            std::cout << "Hand : "<< hand << std::endl;
+        } else {
+            std::cout << "Hand : NULL" << std::endl;
+        }
     }
 
     gameEndFlag = true;

@@ -3,7 +3,7 @@
 #ifndef _HAND_
 #define _HAND_
 
-enum class Hand : int{
+enum class HandName : int {
     ROYAL_FLUSH     = 0,
     STRAIGHT_FLUSH  = 1,
     FOUR_OF_A_KIND  = 2,
@@ -14,6 +14,13 @@ enum class Hand : int{
     TWO_PAIR        = 7,
     ONE_PAIR        = 8,
     NO_PAIR         = 9,
+};
+
+class Hand{
+private:
+public:
+    Hand();
+    ~Hand();
 };
 
 #endif

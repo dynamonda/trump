@@ -6,6 +6,7 @@
 #include <suit.h>
 #include <rank.h>
 #include <card.h>
+#include <hand.h>
 #include <player.h>
 
 Player::Player(){
@@ -35,6 +36,6 @@ void Player::printHands(){
     }
 }
 
-Hand Player::checkHands(){
-    return Hand::NO_PAIR;
+std::shared_ptr<Hand> Player::checkHands(){
+    return nullptr;
 }
