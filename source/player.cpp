@@ -37,5 +37,6 @@ void Player::printHands(){
 }
 
 std::shared_ptr<Hand> Player::checkHands(){
-    return nullptr;
+    std::shared_ptr<Hand> hand = std::make_shared<Hand>();
+    return hand;
 }

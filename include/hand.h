@@ -18,9 +18,13 @@ enum class HandName : int {
 
 class Hand{
 private:
+    HandName handName;
+
 public:
     Hand();
     ~Hand();
+
+    std::string ToString();
 };
 
 #endif

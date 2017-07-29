@@ -49,7 +49,7 @@ void Game::update(){
 
         auto hand = pl->checkHands();
         if(hand != nullptr){
-            std::cout << "Hand : "<< hand << std::endl;
+            std::cout << "Hand : "<< hand->ToString() << std::endl;
         } else {
             std::cout << "Hand : NULL" << std::endl;
         }
