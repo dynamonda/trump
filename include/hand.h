@@ -18,8 +18,16 @@ enum class HandName : int {
 
 class Hand{
 private:
-    HandName handName;
+    HandName handName;    
     bool IsRoyalFlush(std::vector<std::shared_ptr<Card>> cardList);
+    bool IsStraightFlush(std::vector<std::shared_ptr<Card>> cardList);
+    bool IsFourOfaKind(std::vector<std::shared_ptr<Card>> cardList);
+    bool IsFullHouse(std::vector<std::shared_ptr<Card>> cardList);
+    bool IsFlush(std::vector<std::shared_ptr<Card>> cardList);
+    bool IsStraight(std::vector<std::shared_ptr<Card>> cardList);
+    bool IsThreeOfaKind(std::vector<std::shared_ptr<Card>> cardList);
+    bool IsTwoPair(std::vector<std::shared_ptr<Card>> cardList);
+    bool IsOnePair(std::vector<std::shared_ptr<Card>> cardList);
 
 public:
     Hand();

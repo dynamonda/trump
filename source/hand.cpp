@@ -27,6 +27,38 @@ bool Hand::IsRoyalFlush(std::vector<std::shared_ptr<Card>> cardList){
     return false;
 }
 
+bool Hand::IsStraightFlush(std::vector<std::shared_ptr<Card>> cardList){
+    return false;
+}
+
+bool IsFourOfaKind(std::vector<std::shared_ptr<Card>> cardList){
+    return false;
+}
+
+bool IsFullHouse(std::vector<std::shared_ptr<Card>> cardList){
+    return false;
+}
+
+bool IsFlush(std::vector<std::shared_ptr<Card>> cardList){
+    return false;
+}
+
+bool IsStraight(std::vector<std::shared_ptr<Card>> cardList){
+    return false;
+}
+
+bool IsThreeOfaKind(std::vector<std::shared_ptr<Card>> cardList){
+    return false;
+}
+
+bool IsTwoPair(std::vector<std::shared_ptr<Card>> cardList){
+    return false;
+}
+    
+bool IsOnePair(std::vector<std::shared_ptr<Card>> cardList){
+    return false;
+}
+
 std::string Hand::ToString(){
     switch(this->handName){
         case HandName::ROYAL_FLUSH:
