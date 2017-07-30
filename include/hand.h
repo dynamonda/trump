@@ -22,6 +22,7 @@ private:
 
 public:
     Hand();
+    Hand(std::vector<std::shared_ptr<Card>> cardList);
     ~Hand();
 
     std::string ToString();
