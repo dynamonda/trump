@@ -19,6 +19,7 @@ enum class HandName : int {
 class Hand{
 private:
     HandName handName;
+    bool IsRoyalFlush(std::vector<std::shared_ptr<Card>> cardList);
 
 public:
     Hand();
