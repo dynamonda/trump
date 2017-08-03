@@ -14,6 +14,8 @@ Hand::Hand(){
 Hand::Hand(std::vector<std::shared_ptr<Card>> cardList){
     if(IsRoyalFlush(cardList)){
         this->handName = HandName::ROYAL_FLUSH;
+    }else if(IsFlush(cardList)){
+        this->handName = HandName::FLUSH;
     }else{
         this->handName = HandName::ONE_PAIR;
     }
@@ -40,7 +42,20 @@ bool Hand::IsFullHouse(std::vector<std::shared_ptr<Card>> cardList){
 }
 
 bool Hand::IsFlush(std::vector<std::shared_ptr<Card>> cardList){
-    return false;
+    Suit checkSuit = Suit::Null;
+    for(auto card : cardList){
+        if(checkSuit == Suit::Null){
+            if(card->getSuit() != Suit::Joker){
+                checkSuit = card->getSuit();
+            }
+        }else{
+            Suit suit = card->getSuit();
+            if((checkSuit != suit) && (suit != Suit::Joker)){
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 bool Hand::IsStraight(std::vector<std::shared_ptr<Card>> cardList){
