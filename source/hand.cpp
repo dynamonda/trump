@@ -31,32 +31,42 @@ bool Hand::IsStraightFlush(std::vector<std::shared_ptr<Card>> cardList){
     return false;
 }
 
-bool IsFourOfaKind(std::vector<std::shared_ptr<Card>> cardList){
+bool Hand::IsFourOfaKind(std::vector<std::shared_ptr<Card>> cardList){
     return false;
 }
 
-bool IsFullHouse(std::vector<std::shared_ptr<Card>> cardList){
+bool Hand::IsFullHouse(std::vector<std::shared_ptr<Card>> cardList){
     return false;
 }
 
-bool IsFlush(std::vector<std::shared_ptr<Card>> cardList){
+bool Hand::IsFlush(std::vector<std::shared_ptr<Card>> cardList){
     return false;
 }
 
-bool IsStraight(std::vector<std::shared_ptr<Card>> cardList){
+bool Hand::IsStraight(std::vector<std::shared_ptr<Card>> cardList){
     return false;
 }
 
-bool IsThreeOfaKind(std::vector<std::shared_ptr<Card>> cardList){
+bool Hand::IsThreeOfaKind(std::vector<std::shared_ptr<Card>> cardList){
     return false;
 }
 
-bool IsTwoPair(std::vector<std::shared_ptr<Card>> cardList){
+bool Hand::IsTwoPair(std::vector<std::shared_ptr<Card>> cardList){
     return false;
 }
     
-bool IsOnePair(std::vector<std::shared_ptr<Card>> cardList){
+bool Hand::IsOnePair(std::vector<std::shared_ptr<Card>> cardList){
     return false;
+}
+
+bool Hand::IsJoker(std::vector<std::shared_ptr<Card>> cardList){
+    bool result = false;
+    for(auto card : cardList){
+        if(card->getNumber() == 0){
+            result = true;
+        }
+    }
+    return result;
 }
 
 std::string Hand::ToString(){

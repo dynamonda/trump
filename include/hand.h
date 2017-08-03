@@ -28,6 +28,7 @@ private:
     bool IsThreeOfaKind(std::vector<std::shared_ptr<Card>> cardList);
     bool IsTwoPair(std::vector<std::shared_ptr<Card>> cardList);
     bool IsOnePair(std::vector<std::shared_ptr<Card>> cardList);
+    bool IsJoker(std::vector<std::shared_ptr<Card>> cardList);
 
 public:
     Hand();
