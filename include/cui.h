@@ -9,6 +9,8 @@ private:
 public:
     CUI();
     ~CUI();
+
+    void waitCommand();
 };
 
 #endif

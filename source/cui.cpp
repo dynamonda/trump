@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+
 #include <cui.h>
 
 CUI::CUI(){
@@ -7,4 +9,11 @@ CUI::CUI(){
 
 CUI::~CUI(){
 
+}
+
+void CUI::waitCommand(){
+    std::string command;
+    std::cout << "> "; 
+    std::cin >> command;
+    std::cout << command << std::endl;
 }

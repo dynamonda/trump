@@ -57,6 +57,8 @@ void Game::update(){
         }
     }
 
+    cui->waitCommand();
+    
     gameEndFlag = true;
 }
 
