@@ -1,6 +1,7 @@
 #include <string>
 #include <memory>
 #include <vector>
+#include <map>
 
 #include <suit.h>
 #include <rank.h>
@@ -16,8 +17,10 @@ Hand::Hand(std::vector<std::shared_ptr<Card>> cardList){
         this->handName = HandName::ROYAL_FLUSH;
     }else if(IsFlush(cardList)){
         this->handName = HandName::FLUSH;
-    }else{
+    }else if(IsOnePair(cardList)){
         this->handName = HandName::ONE_PAIR;
+    }else{
+        this->handName = HandName::NO_PAIR;
     }
 }
 
@@ -71,6 +74,19 @@ bool Hand::IsTwoPair(std::vector<std::shared_ptr<Card>> cardList){
 }
     
 bool Hand::IsOnePair(std::vector<std::shared_ptr<Card>> cardList){
+    if(IsJoker(cardList)){
+        return true;
+    }else{
+        std::map<Rank,int> counter;
+        for(auto card : cardList){
+            Rank rank = card->getRank();
+            if(counter[rank] == 0){
+                counter[card->getRank()] += 1;
+            }else{
+                return true;
+            }
+        }
+    }
     return false;
 }
 
