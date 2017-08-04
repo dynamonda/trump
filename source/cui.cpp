@@ -3,6 +3,14 @@
 
 #include <cui.h>
 
+Parser::Parser(){
+
+}
+
+Parser::~Parser(){
+    
+}
+
 CUI::CUI(){
     std::cout << "CUI Created" << std::endl;
 }
