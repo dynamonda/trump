@@ -3,6 +3,7 @@
 #include <vector>
 #include <fstream>
 
+#include <cui.h>
 #include <deck.h>
 #include <player.h>
 #include <rank.h>
@@ -12,6 +13,7 @@
 #include <game.h>
 
 Game::Game(){
+    cui = std::make_unique<CUI>();
     gameEndFlag = false;
     std::cout << "Game Created" << std::endl;
 }
