@@ -3,6 +3,8 @@
 #ifndef _CUI_
 #define _CUI_
 
+class Game;
+
 class Parser{
 private:
 public:
@@ -17,7 +19,7 @@ public:
     CUI();
     ~CUI();
 
-    void waitCommand();
+    void waitCommand(Game* const game);
 };
 
 #endif

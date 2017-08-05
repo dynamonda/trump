@@ -1,14 +1,16 @@
 #include <iostream>
 #include <string>
+#include <vector>
 
 #include <cui.h>
+#include <game.h>
 
 Parser::Parser(){
 
 }
 
 Parser::~Parser(){
-    
+
 }
 
 CUI::CUI(){
@@ -19,9 +21,11 @@ CUI::~CUI(){
 
 }
 
-void CUI::waitCommand(){
+void CUI::waitCommand(Game* const game){
     std::string command;
     std::cout << "> "; 
     std::cin >> command;
     std::cout << command << std::endl;
+    
+    std::cout << std::boolalpha << game->isEnd() << std::endl;
 }
