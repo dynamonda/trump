@@ -8,7 +8,7 @@ class Game;
 class Parser{
 private:
 public:
-    Parser();
+    Parser(std::string command = "");
     ~Parser();
 };
 
