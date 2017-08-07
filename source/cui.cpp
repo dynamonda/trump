@@ -35,6 +35,13 @@ std::vector<std::string> Parser::split(const std::string &str, char sep){
     return v;
 }
 
+void Parser::evaluate(){
+    std::stack<int> stack;
+    for(auto exp : parseTree){
+        
+    }
+}
+
 CUI::CUI(){
     std::cout << "CUI Created" << std::endl;
 }
