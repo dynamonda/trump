@@ -2,14 +2,22 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <stack>
 
 #include <cui.h>
 #include <game.h>
 
 Parser::Parser(std::string command){
     auto splitCommand = split(command, ' ');
-    for(auto str : splitCommand){
+    for(std::string str : splitCommand){
         std::cout << str << std::endl;
+        if(str == "help"){
+
+        }else if(str == "exit"){
+
+        }else{
+
+        }
     }
 }
 
