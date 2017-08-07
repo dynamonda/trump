@@ -15,6 +15,11 @@ public:
     void interpret(std::stack<int> stack);
 };
 
+class Expression_Help : public Expression {
+public:
+    void interpret(std::stack<int> stack);
+};
+
 
 class Parser{
 private:

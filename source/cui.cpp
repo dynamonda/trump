@@ -11,12 +11,19 @@ void Expression_Exit::interpret(std::stack<int> stack){
     std::cout << "=== Exit message ===" << std::endl;
 }
 
+void Expression_Help::interpret(std::stack<int> stack){
+    std::cout << "=== Help message ===" << std::endl;
+    std::cout << " help : print help message" << std::endl;
+    std::cout << " exit : end this game" << std::endl;
+    std::cout << std::endl;
+}
+
 Parser::Parser(std::string command){
     auto splitCommand = split(command, ' ');
     for(std::string str : splitCommand){
         std::cout << str << std::endl;
         if(str == "help"){
-
+            parseTree.push_back(std::make_shared<Expression_Help>());
         }else if(str == "exit"){
             parseTree.push_back(std::make_shared<Expression_Exit>());
         }else{
