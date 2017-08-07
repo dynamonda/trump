@@ -7,6 +7,8 @@ class Game;
 
 class Parser{
 private:
+    std::vector<std::string> split(const std::string &str, char sep);
+
 public:
     Parser(std::string command = "");
     ~Parser();

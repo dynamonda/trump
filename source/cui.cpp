@@ -1,16 +1,30 @@
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <vector>
 
 #include <cui.h>
 #include <game.h>
 
 Parser::Parser(std::string command){
-    std::cout << command << std::endl;
+    auto splitCommand = split(command, ' ');
+    for(auto str : splitCommand){
+        std::cout << str << std::endl;
+    }
 }
 
 Parser::~Parser(){
 
+}
+
+std::vector<std::string> Parser::split(const std::string &str, char sep){
+    std::vector<std::string> v;
+    std::stringstream ss(str);
+    std::string buffer;
+    while(std::getline(ss, buffer, sep)){
+        v.push_back(buffer);
+    }
+    return v;
 }
 
 CUI::CUI(){
