@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stack>
 #include <fstream>
 
 #include <cui.h>
@@ -31,14 +32,14 @@ bool Game::setup(){
     players.push_back(std::make_shared<Player>("Hanako"));
     std::cout << "Player Num: " << players.size() << std::endl;
     std::cout << "Setup Success!" << std::endl;
+
+    deck->shuffle();
+
     return true;
 }
 
 void Game::update(){
     std::cout << "Game Update" << std::endl;
-
-    deck->shuffle();
-    deck->print();
 
     for(auto pl : players){
         while(pl->getHandsSize() < 5){
