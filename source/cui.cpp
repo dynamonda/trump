@@ -7,6 +7,10 @@
 #include <cui.h>
 #include <game.h>
 
+void Expression_Exit::interpret(std::stack<int> stack){
+    std::cout << "=== Exit message ===" << std::endl;
+}
+
 Parser::Parser(std::string command){
     auto splitCommand = split(command, ' ');
     for(std::string str : splitCommand){
@@ -14,7 +18,7 @@ Parser::Parser(std::string command){
         if(str == "help"){
 
         }else if(str == "exit"){
-
+            parseTree.push_back(std::make_shared<Expression_Exit>());
         }else{
 
         }
@@ -38,7 +42,7 @@ std::vector<std::string> Parser::split(const std::string &str, char sep){
 void Parser::evaluate(){
     std::stack<int> stack;
     for(auto exp : parseTree){
-        
+        exp->interpret(stack);
     }
 }
 
@@ -55,6 +59,7 @@ void CUI::waitCommand(Game* const game){
     std::cout << "> ";
     std::getline(std::cin, command);
     std::unique_ptr<Parser> parser = std::make_unique<Parser>(command);
-    
+    parser->evaluate();
+
     std::cout << std::boolalpha << game->isEnd() << std::endl;
 }

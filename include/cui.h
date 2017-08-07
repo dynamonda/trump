@@ -5,14 +5,20 @@
 
 class Game;
 
-class Expression{
+class Expression {
 public:
-    virtual void interpret(std::stack<int> stack);
+    virtual void interpret(std::stack<int> stack){};
 };
+
+class Expression_Exit : public Expression {
+public:
+    void interpret(std::stack<int> stack);
+};
+
 
 class Parser{
 private:
-    std::vector<Expression> parseTree;
+    std::vector<std::shared_ptr<Expression>> parseTree;
     std::vector<std::string> split(const std::string &str, char sep);
 
 public:
