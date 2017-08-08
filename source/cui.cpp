@@ -7,29 +7,16 @@
 #include <cui.h>
 #include <game.h>
 
-void Expression_Exit::interpret(std::stack<int> stack){
-    std::cout << "=== Exit message ===" << std::endl;
-}
-
-void Expression_Help::interpret(std::stack<int> stack){
-    std::cout << "=== Help message ===" << std::endl;
-    std::cout << " help : print help message" << std::endl;
-    std::cout << " exit : end this game" << std::endl;
-    std::cout << std::endl;
-}
-
 Parser::Parser(std::string command){
     auto splitCommand = split(command, ' ');
     for(std::string str : splitCommand){
         std::cout << str << std::endl;
         if(str == "help"){
-            //parseTree.push_back(std::make_shared<Expression_Help>());
             std::cout << "=== Help message ===" << std::endl;
             std::cout << " help : print help message" << std::endl;
             std::cout << " exit : end this game" << std::endl;
             std::cout << std::endl;
         }else if(str == "exit"){
-            //parseTree.push_back(std::make_shared<Expression_Exit>());
             std::cout << "=== Exit message ===" << std::endl;
         }else{
 
@@ -53,9 +40,6 @@ std::vector<std::string> Parser::split(const std::string &str, char sep){
 
 void Parser::evaluate(){
     std::stack<int> stack;
-    for(auto exp : parseTree){
-        //exp->interpret(stack);
-    }
 }
 
 CUI::CUI(){
