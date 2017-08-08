@@ -35,12 +35,6 @@ bool Game::setup(){
 
     deck->shuffle();
 
-    return true;
-}
-
-void Game::update(){
-    std::cout << "Game Update" << std::endl;
-
     for(auto pl : players){
         while(pl->getHandsSize() < 5){
             auto card = deck->draw();
@@ -57,6 +51,12 @@ void Game::update(){
             std::cout << "Hand : NULL" << std::endl;
         }
     }
+
+    return true;
+}
+
+void Game::update(){
+    std::cout << "Game Update" << std::endl;
 
     cui->waitCommand(this);
 
