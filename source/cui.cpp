@@ -48,7 +48,7 @@ std::vector<std::string> Parser::split(const std::string &str, char sep){
 }
 
 void Parser::evaluate(Game* const game){
-    std::stack<int> stack;
+    
 }
 
 CUI::CUI(){
