@@ -8,6 +8,7 @@
 class Player{
 private:
     std::string name;
+    int chip;
     std::vector<std::shared_ptr<Card>> hands;
 
 public:

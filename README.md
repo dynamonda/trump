@@ -1,5 +1,9 @@
 # Trump Game
 
+## Rule
+
+[任天堂・ポーカーの遊び方](https://www.nintendo.co.jp/n09/trump_games/poker/)
+
 ## Command List
 
 - root

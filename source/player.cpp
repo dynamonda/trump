@@ -10,11 +10,13 @@
 #include <player.h>
 
 Player::Player(){
+    chip = 100;
     std::cout << "Player created" << std::endl;
 }
 
 Player::Player(std::string name){
     name = name;
+    chip = 100;
     std::cout << "Player created : " << name << std::endl;
 }
 
