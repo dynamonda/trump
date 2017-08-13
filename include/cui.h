@@ -8,13 +8,13 @@ class Player;
 
 class Command{
 public:
-    virtual void execute() = 0;
+    virtual void execute(Game* const game) = 0;
 };
 
 class ShowCommand: public Command{
 public:
     ShowCommand();
-    void execute();
+    void execute(Game* const game);
 };
 
 class Parser{

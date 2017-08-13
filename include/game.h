@@ -22,7 +22,6 @@ public:
     bool setup();
     void update();
 
-
     bool isEnd();
 };
 

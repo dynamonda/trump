@@ -11,7 +11,7 @@ ShowCommand::ShowCommand(){
 
 }
 
-void ShowCommand::execute(){
+void ShowCommand::execute(Game* const game){
     std::cout << "SHOW DECK COMMAND" << std::endl;
 }
 
@@ -59,7 +59,7 @@ void Parser::evaluate(Game* const game){
     while(commands.size() > 0){
         auto command = commands.top();
         commands.pop();
-        command->execute();
+        command->execute(game);
     }
 }
 
