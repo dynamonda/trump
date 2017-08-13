@@ -11,8 +11,17 @@ Parser::Parser(std::string command){
     auto splitCommand = split(command, ' ');
     if(splitCommand.size() > 0){
         auto str = splitCommand[0];
-        if(str == "help"){
+        if(str == "show"){
+            if(splitCommand.size() > 1){
+                if(splitCommand[1] == "deck"){
+                    std::cout << "SHOW DECK COMMAND" << std::endl;
+                }
+            }else{
+
+            }
+        }else if(str == "help"){
             std::cout << "=== Help message ===" << std::endl;
+            std::cout << " show deck : print deck list" << std::endl;
             std::cout << " help : print help message" << std::endl;
             std::cout << " exit : end this game" << std::endl;
             std::cout << std::endl;
