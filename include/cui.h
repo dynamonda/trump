@@ -13,7 +13,7 @@ private:
 public:
     Parser(std::string command = "");
     ~Parser();
-    void evaluate();
+    void evaluate(Game* const game);
 };
 
 class CUI{

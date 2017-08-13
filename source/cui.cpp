@@ -47,7 +47,7 @@ std::vector<std::string> Parser::split(const std::string &str, char sep){
     return v;
 }
 
-void Parser::evaluate(){
+void Parser::evaluate(Game* const game){
     std::stack<int> stack;
 }
 
@@ -65,7 +65,7 @@ void CUI::waitCommand(Game* const game){
     std::cout << "> ";
     std::getline(std::cin, command);
     std::unique_ptr<Parser> parser = std::make_unique<Parser>(command);
-    parser->evaluate();
+    parser->evaluate(game);
 
     std::cout << std::boolalpha << game->isEnd() << std::endl;
 }
