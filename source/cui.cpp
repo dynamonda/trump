@@ -43,6 +43,7 @@ void Parser::evaluate(){
 }
 
 CUI::CUI(){
+    this->player = nullptr;
     std::cout << "CUI Created" << std::endl;
 }
 

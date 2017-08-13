@@ -4,6 +4,7 @@
 #define _CUI_
 
 class Game;
+class Player;
 
 class Parser{
 private:
@@ -17,6 +18,7 @@ public:
 
 class CUI{
 private:
+    std::shared_ptr<Player> player;
 
 public:
     CUI();
