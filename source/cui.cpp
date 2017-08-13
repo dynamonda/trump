@@ -9,8 +9,8 @@
 
 Parser::Parser(std::string command){
     auto splitCommand = split(command, ' ');
-    for(std::string str : splitCommand){
-        std::cout << str << std::endl;
+    if(splitCommand.size() > 0){
+        auto str = splitCommand[0];
         if(str == "help"){
             std::cout << "=== Help message ===" << std::endl;
             std::cout << " help : print help message" << std::endl;
@@ -19,7 +19,7 @@ Parser::Parser(std::string command){
         }else if(str == "exit"){
             std::cout << "=== Exit message ===" << std::endl;
         }else{
-
+            std::cout << "Error, not exist command: " << str << std::endl;
         }
     }
 }
