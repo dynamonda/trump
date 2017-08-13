@@ -12,12 +12,13 @@ private:
     std::unique_ptr<CUI> cui;
     
     bool gameEndFlag;
-    std::unique_ptr<Deck> deck;
     std::vector< std::shared_ptr<Player> > players;
 
 public:
     Game();
     ~Game();
+
+    std::unique_ptr<Deck> deck;
 
     bool setup();
     void update();
