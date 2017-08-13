@@ -4,6 +4,7 @@
 #include <vector>
 #include <stack>
 
+#include <deck.h>
 #include <cui.h>
 #include <game.h>
 
@@ -12,7 +13,8 @@ ShowCommand::ShowCommand(){
 }
 
 void ShowCommand::execute(Game* const game){
-    std::cout << "SHOW DECK COMMAND" << std::endl;
+    std::cout << "=== show deck list ===" << std::endl;
+    game->deck->print();
 }
 
 Parser::Parser(std::string command){
