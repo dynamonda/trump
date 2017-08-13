@@ -7,6 +7,14 @@
 #include <cui.h>
 #include <game.h>
 
+ShowCommand::ShowCommand(){
+
+}
+
+void ShowCommand::execute(){
+    std::cout << "SHOW DECK COMMAND" << std::endl;
+}
+
 Parser::Parser(std::string command){
     auto splitCommand = split(command, ' ');
     if(splitCommand.size() > 0){
@@ -14,7 +22,7 @@ Parser::Parser(std::string command){
         if(str == "show"){
             if(splitCommand.size() > 1){
                 if(splitCommand[1] == "deck"){
-                    std::cout << "SHOW DECK COMMAND" << std::endl;
+                    commands.push(std::make_shared<ShowCommand>());
                 }
             }else{
 
@@ -48,7 +56,11 @@ std::vector<std::string> Parser::split(const std::string &str, char sep){
 }
 
 void Parser::evaluate(Game* const game){
-    
+    while(commands.size() > 0){
+        auto command = commands.top();
+        commands.pop();
+        command->execute();
+    }
 }
 
 CUI::CUI(){

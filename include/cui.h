@@ -11,6 +11,12 @@ public:
     virtual void execute() = 0;
 };
 
+class ShowCommand: public Command{
+public:
+    ShowCommand();
+    void execute();
+};
+
 class Parser{
 private:
     std::vector<std::string> split(const std::string &str, char sep);
