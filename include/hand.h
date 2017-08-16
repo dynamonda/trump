@@ -29,6 +29,7 @@ private:
     bool IsTwoPair(std::vector<std::shared_ptr<Card>> cardList);
     bool IsOnePair(std::vector<std::shared_ptr<Card>> cardList);
     bool IsJoker(std::vector<std::shared_ptr<Card>> cardList);
+    std::vector<std::shared_ptr<Card>> copyCardList(std::vector<std::shared_ptr<Card>> cardList);
 
 public:
     Hand();

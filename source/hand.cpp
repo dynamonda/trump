@@ -2,6 +2,7 @@
 #include <memory>
 #include <vector>
 #include <map>
+#include <iostream>
 
 #include <suit.h>
 #include <rank.h>
@@ -17,6 +18,8 @@ Hand::Hand(std::vector<std::shared_ptr<Card>> cardList){
         this->handName = HandName::ROYAL_FLUSH;
     }else if(IsFlush(cardList)){
         this->handName = HandName::FLUSH;
+    }else if(IsStraight(cardList)){
+        this->handName = HandName::STRAIGHT;
     }else if(IsOnePair(cardList)){
         this->handName = HandName::ONE_PAIR;
     }else{
@@ -62,6 +65,8 @@ bool Hand::IsFlush(std::vector<std::shared_ptr<Card>> cardList){
 }
 
 bool Hand::IsStraight(std::vector<std::shared_ptr<Card>> cardList){
+    auto list = copyCardList(cardList);
+    std::cout << "Origin:" << &cardList << "\nCopy  :" << &list << std::endl;
     return false;
 }
 
@@ -98,6 +103,14 @@ bool Hand::IsJoker(std::vector<std::shared_ptr<Card>> cardList){
         }
     }
     return result;
+}
+
+std::vector<std::shared_ptr<Card>> Hand::copyCardList(std::vector<std::shared_ptr<Card>> cardList){
+    std::vector<std::shared_ptr<Card>> list(cardList.size());
+    for(auto card: cardList){
+        list.push_back(std::make_shared<Card>(card->getNumber()));
+    }
+    return list;
 }
 
 std::string Hand::ToString(){
