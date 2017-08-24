@@ -103,7 +103,7 @@ bool Hand::IsStraight(std::vector<std::shared_ptr<Card>> cardList){
             }
         }
     }
-    if(count >= 5){
+    if((count >= 5)||(useSkip && count >= 4)){
         return true;
     }
     return false;
