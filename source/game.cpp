@@ -65,3 +65,11 @@ bool Game::isEnd(){
 void Game::setEnd(){
     gameEndFlag = true;
 }
+
+std::shared_ptr<Player> Game::getPlayer(int id){
+    if(players[id] != nullptr){
+        return players[id];
+    }else{
+        return nullptr;
+    }
+};

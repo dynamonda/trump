@@ -13,7 +13,7 @@ private:
     std::unique_ptr<CUI> cui;
     
     bool gameEndFlag;
-    std::vector< std::shared_ptr<Player> > players;
+    std::vector<std::shared_ptr<Player>> players;
 
 public:
     Game();
@@ -26,6 +26,8 @@ public:
 
     bool isEnd();
     void setEnd();
+
+    std::shared_ptr<Player> getPlayer(int id);
 };
 
 #endif

@@ -23,7 +23,9 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
     if(splitCommand.size() > 0){
         auto str = splitCommand[0];
         if(user == nullptr){
-            if(str == "show"){
+            if(str == "player"){
+                
+            }else if(str == "show"){
                 if(splitCommand.size() > 1){
                     if(splitCommand[1] == "deck"){
                         commands.push(std::make_shared<ShowCommand>());
