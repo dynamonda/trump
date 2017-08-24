@@ -83,23 +83,28 @@ bool Hand::IsStraight(std::vector<std::shared_ptr<Card>> cardList){
             " Value:" << itr->second << std::endl;
     }*/
     int count = 0;
+    bool useSkip = false;
     if(IsJoker(cardList)){
-        //bool usedSkip = false;
-    }else{
-        for(auto itr=straightList.begin(); itr!=straightList.end(); ++itr){
-            if(count <= 0){
-                if(cardMap[*itr] > 0){
-                    ++count;
-                }
-            } else {
+        useSkip = true;
+    }
+    for(auto itr=straightList.begin(); itr!=straightList.end(); ++itr){
+        if(count <= 0){
+            if(cardMap[*itr] > 0){
+                ++count;
+            }
+        } else {
+            if(cardMap[*itr] <= 0){
                 if(count < 5){
                     count = 0;
                 }
+            }else if(useSkip){
+                useSkip = false;
+                ++count;
             }
         }
-        if(count >= 5){
-            return true;
-        }
+    }
+    if(count >= 5){
+        return true;
     }
     return false;
 }
