@@ -74,18 +74,18 @@ bool Hand::IsStraight(std::vector<std::shared_ptr<Card>> cardList){
         //std::cout << "LIST:" << (int)(*itr) << std::endl;
     //}
     std::map<Rank, int> cardMap;
+    for(auto card : cardList){
+        int num = cardMap[card->getRank()];
+        cardMap[card->getRank()] = ++num;
+    }
+    /*for(auto itr=cardMap.begin(); itr!=cardMap.end(); ++itr){
+        std::cout << "Key:" << (int)(itr->first) <<
+            " Value:" << itr->second << std::endl;
+    }*/
+    int count = 0;
     if(IsJoker(cardList)){
-
+        //bool usedSkip = false;
     }else{
-        for(auto card : cardList){
-            int num = cardMap[card->getRank()];
-            cardMap[card->getRank()] = ++num;
-        }
-        /*for(auto itr=cardMap.begin(); itr!=cardMap.end(); ++itr){
-            std::cout << "Key:" << (int)(itr->first) <<
-                " Value:" << itr->second << std::endl;
-        }*/
-        int count = 0;
         for(auto itr=straightList.begin(); itr!=straightList.end(); ++itr){
             if(count <= 0){
                 if(cardMap[*itr] > 0){
