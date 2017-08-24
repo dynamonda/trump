@@ -29,7 +29,7 @@ private:
     std::stack<std::shared_ptr<Command>> commands;
 
 public:
-    Parser(std::string command = "");
+    Parser(std::string command = "", std::shared_ptr<Player> user = nullptr);
     ~Parser();
     void evaluate(Game* const game);
 };

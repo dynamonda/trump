@@ -18,28 +18,32 @@ void ExitCommand::execute(Game* const game){
     game->setEnd();
 }
 
-Parser::Parser(std::string command){
+Parser::Parser(std::string command, std::shared_ptr<Player> user){
     auto splitCommand = split(command, ' ');
     if(splitCommand.size() > 0){
         auto str = splitCommand[0];
-        if(str == "show"){
-            if(splitCommand.size() > 1){
-                if(splitCommand[1] == "deck"){
-                    commands.push(std::make_shared<ShowCommand>());
-                }
-            }else{
+        if(user == nullptr){
+            if(str == "show"){
+                if(splitCommand.size() > 1){
+                    if(splitCommand[1] == "deck"){
+                        commands.push(std::make_shared<ShowCommand>());
+                    }
+                }else{
 
+                }
+            }else if(str == "help"){
+                std::cout << "=== Help message ===" << std::endl;
+                std::cout << " show deck : print deck list" << std::endl;
+                std::cout << " help : print help message" << std::endl;
+                std::cout << " exit : end this game" << std::endl;
+                std::cout << std::endl;
+            }else if(str == "exit"){
+                commands.push(std::make_shared<ExitCommand>());
+            }else{
+                std::cout << "Error, not exist command: " << str << std::endl;
             }
-        }else if(str == "help"){
-            std::cout << "=== Help message ===" << std::endl;
-            std::cout << " show deck : print deck list" << std::endl;
-            std::cout << " help : print help message" << std::endl;
-            std::cout << " exit : end this game" << std::endl;
-            std::cout << std::endl;
-        }else if(str == "exit"){
-            commands.push(std::make_shared<ExitCommand>());
         }else{
-            std::cout << "Error, not exist command: " << str << std::endl;
+            std::cout << "Player command: " << str << std::endl;
         }
     }
 }
@@ -79,7 +83,7 @@ void CUI::waitCommand(Game* const game){
     std::string command;
     std::cout << "> ";
     std::getline(std::cin, command);
-    std::unique_ptr<Parser> parser = std::make_unique<Parser>(command);
+    std::unique_ptr<Parser> parser = std::make_unique<Parser>(command, player);
     parser->evaluate(game);
 
     std::cout << std::boolalpha << game->isEnd() << std::endl;
