@@ -8,10 +8,6 @@
 #include <cui.h>
 #include <game.h>
 
-ShowCommand::ShowCommand(){
-
-}
-
 void ShowCommand::execute(Game* const game){
     std::cout << "=== show deck list ===" << std::endl;
     game->deck->print();

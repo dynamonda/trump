@@ -13,7 +13,7 @@ public:
 
 class ShowCommand: public Command{
 public:
-    ShowCommand();
+    ShowCommand(){};
     void execute(Game* const game);
 };
 
