@@ -17,6 +17,12 @@ public:
     void execute(Game* const game);
 };
 
+class ExitCommand: public Command{
+public:
+    ExitCommand(){};
+    void execute(Game* const game);
+};
+
 class Parser{
 private:
     std::vector<std::string> split(const std::string &str, char sep);

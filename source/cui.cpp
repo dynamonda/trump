@@ -17,6 +17,10 @@ void ShowCommand::execute(Game* const game){
     game->deck->print();
 }
 
+void ExitCommand::execute(Game* const game){
+    std::cout << "=== Exit message ===" << std::endl;
+}
+
 Parser::Parser(std::string command){
     auto splitCommand = split(command, ' ');
     if(splitCommand.size() > 0){
@@ -36,7 +40,7 @@ Parser::Parser(std::string command){
             std::cout << " exit : end this game" << std::endl;
             std::cout << std::endl;
         }else if(str == "exit"){
-            std::cout << "=== Exit message ===" << std::endl;
+            commands.push(std::make_shared<ExitCommand>());
         }else{
             std::cout << "Error, not exist command: " << str << std::endl;
         }
