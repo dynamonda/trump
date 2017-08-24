@@ -6,6 +6,7 @@
 class Deck;
 class Player;
 class Card;
+class CUI;
 
 class Game{
 private:
