@@ -85,6 +85,4 @@ void CUI::waitCommand(Game* const game){
     std::getline(std::cin, command);
     std::unique_ptr<Parser> parser = std::make_unique<Parser>(command, player);
     parser->evaluate(game);
-
-    std::cout << std::boolalpha << game->isEnd() << std::endl;
 }
