@@ -30,7 +30,6 @@ bool Game::setup(){
     players.push_back(std::make_shared<Player>("Taro"));
     players.push_back(std::make_shared<Player>("Hanako"));
     std::cout << "Player Num: " << players.size() << std::endl;
-    std::cout << "Setup Success!" << std::endl;
 
     deck->shuffle();
 
@@ -40,7 +39,6 @@ bool Game::setup(){
             pl->insertCard(card);
         }
 
-        std::cout << pl->getHandsSize() << std::endl;
         pl->printHands();
 
         auto hand = pl->checkHands();
