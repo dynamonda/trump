@@ -65,8 +65,42 @@ bool Hand::IsFlush(std::vector<std::shared_ptr<Card>> cardList){
 }
 
 bool Hand::IsStraight(std::vector<std::shared_ptr<Card>> cardList){
-    auto list = copyCardList(cardList);
-    std::cout << "Origin:" << &cardList << "\nCopy  :" << &list << std::endl;
+    std::vector<Rank> straightList{
+        Rank::TWO, Rank::THREE, Rank::FOUR, Rank::FIVE, Rank::SIX,
+        Rank::SEVEN, Rank::EIGHT, Rank::NINE, Rank::TEN, Rank::JACK,
+        Rank::QUEEN, Rank::KING, Rank::ACE
+    };
+    //for(auto itr=straightList.begin(); itr!=straightList.end(); ++itr){
+        //std::cout << "LIST:" << (int)(*itr) << std::endl;
+    //}
+    std::map<Rank, int> cardMap;
+    if(IsJoker(cardList)){
+
+    }else{
+        for(auto card : cardList){
+            int num = cardMap[card->getRank()];
+            cardMap[card->getRank()] = ++num;
+        }
+        /*for(auto itr=cardMap.begin(); itr!=cardMap.end(); ++itr){
+            std::cout << "Key:" << (int)(itr->first) <<
+                " Value:" << itr->second << std::endl;
+        }*/
+        int count = 0;
+        for(auto itr=straightList.begin(); itr!=straightList.end(); ++itr){
+            if(count <= 0){
+                if(cardMap[*itr] > 0){
+                    ++count;
+                }
+            } else {
+                if(count < 5){
+                    count = 0;
+                }
+            }
+        }
+        if(count >= 5){
+            return true;
+        }
+    }
     return false;
 }
 
