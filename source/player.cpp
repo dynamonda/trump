@@ -15,7 +15,7 @@ Player::Player(){
 }
 
 Player::Player(std::string name){
-    name = name;
+    this->name = name;
     chip = 100;
     std::cout << "Player created : " << name << std::endl;
 }
@@ -33,8 +33,11 @@ int Player::getHandsSize(){
 }
 
 void Player::printHands(){
+    std::cout << "--- " << name << " ---" << std::endl;
+    int id = 0;
     for(auto card : hands){
-        std::cout << card->getInfoString() << std::endl;
+        std::cout << "[" << id << "]:" << card->getInfoString() << std::endl;
+        ++id;
     }
 }
 
