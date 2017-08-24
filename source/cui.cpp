@@ -15,6 +15,7 @@ void ShowCommand::execute(Game* const game){
 
 void ExitCommand::execute(Game* const game){
     std::cout << "=== Exit message ===" << std::endl;
+    game->setEnd();
 }
 
 Parser::Parser(std::string command){

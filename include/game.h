@@ -25,6 +25,7 @@ public:
     void update();
 
     bool isEnd();
+    void setEnd();
 };
 
 #endif

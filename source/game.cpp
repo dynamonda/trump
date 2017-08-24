@@ -55,11 +55,13 @@ bool Game::setup(){
 void Game::update(){
     std::cout << "Game Update" << std::endl;
 
-    cui->waitCommand(this);
-
-    gameEndFlag = true;
+    cui->waitCommand(this);   
 }
 
 bool Game::isEnd(){
     return gameEndFlag;
+}
+
+void Game::setEnd(){
+    gameEndFlag = true;
 }
