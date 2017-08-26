@@ -4,7 +4,6 @@
 #define _CUI_
 
 class Game;
-class Player;
 
 class Command{
 public:

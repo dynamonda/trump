@@ -5,6 +5,7 @@
 #include <stack>
 
 #include <deck.h>
+#include <player.h>
 #include <cui.h>
 #include <game.h>
 
@@ -91,7 +92,11 @@ void CUI::setPlayer(std::shared_ptr<Player> const player){
 
 void CUI::waitCommand(Game* const game){
     std::string command;
-    std::cout << "> ";
+    if(player==nullptr){
+        std::cout << "> ";
+    }else{
+        std::cout << player->getName() << " > ";
+    }
     std::getline(std::cin, command);
     std::unique_ptr<Parser> parser = std::make_unique<Parser>(command, player);
     parser->evaluate(game);

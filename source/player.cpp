@@ -24,6 +24,10 @@ Player::~Player(){
     
 }
 
+std::string Player::getName(){
+    return name;
+};
+
 void Player::insertCard(std::shared_ptr<Card> card){
     hands.push_back(card);
 }

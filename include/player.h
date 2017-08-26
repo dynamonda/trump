@@ -16,6 +16,7 @@ public:
     Player(std::string name);
     ~Player();
 
+    std::string getName();
     void insertCard(std::shared_ptr<Card> card);
     int getHandsSize();
     void printHands();
