@@ -61,7 +61,7 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
                             std::cout << std::stoi(splitCommand[index]) << std::endl;
                         }catch(std::invalid_argument arg){
                             std::cout << "数値を入力してください: " << splitCommand[index] << std::endl;
-                        }catch(std::exception ex){
+                        }catch(...){
                             std::cout << "エラーが発生しました" << std::endl;
                         }
                     }
