@@ -56,6 +56,15 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
         }else{
             if(str == "change"){
                 if(splitCommand.size() > 1){
+                    for(int index = 1; index < splitCommand.size(); ++index){
+                        try{
+                            std::cout << std::stoi(splitCommand[index]) << std::endl;
+                        }catch(std::invalid_argument arg){
+                            std::cout << "数値を入力してください: " << splitCommand[index] << std::endl;
+                        }catch(std::exception ex){
+                            std::cout << "エラーが発生しました" << std::endl;
+                        }
+                    }
                     commands.push(std::make_shared<ChangeCommand>());
                 }
             }else if(str == "exit"){
