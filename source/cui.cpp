@@ -19,6 +19,14 @@ void ExitCommand::execute(Game* const game){
     game->setEnd();
 }
 
+ChangeCommand::ChangeCommand(){
+
+};
+
+void ChangeCommand::execute(Game* const game){
+    std::cout << "Change Command message" << std::endl;
+};
+
 Parser::Parser(std::string command, std::shared_ptr<Player> user){
     auto splitCommand = split(command, ' ');
     if(splitCommand.size() > 0){
@@ -46,7 +54,11 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
                 std::cout << "Error, not exist command: " << str << std::endl;
             }
         }else{
-            if(str == "exit"){
+            if(str == "change"){
+                if(splitCommand.size() > 1){
+                    commands.push(std::make_shared<ChangeCommand>());
+                }
+            }else if(str == "exit"){
                 commands.push(std::make_shared<ExitCommand>());
             }else{
                 std::cout << "Player command: " << str << std::endl;

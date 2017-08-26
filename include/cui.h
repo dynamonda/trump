@@ -22,6 +22,12 @@ public:
     void execute(Game* const game);
 };
 
+class ChangeCommand : public Command{
+public:
+    ChangeCommand();
+    void execute(Game* const game);
+};
+
 class Parser{
 private:
     std::vector<std::string> split(const std::string &str, char sep);
