@@ -30,6 +30,7 @@ bool Game::setup(){
     players.push_back(std::make_shared<Player>("Taro"));
     //players.push_back(std::make_shared<Player>("Hanako"));
     std::cout << "Player Num: " << players.size() << std::endl;
+    cui->setPlayer(players[0]);
 
     deck->shuffle();
 

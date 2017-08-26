@@ -24,7 +24,7 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
         auto str = splitCommand[0];
         if(user == nullptr){
             if(str == "player"){
-                
+
             }else if(str == "show"){
                 if(splitCommand.size() > 1){
                     if(splitCommand[1] == "deck"){
@@ -45,7 +45,11 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
                 std::cout << "Error, not exist command: " << str << std::endl;
             }
         }else{
-            std::cout << "Player command: " << str << std::endl;
+            if(str == "exit"){
+                commands.push(std::make_shared<ExitCommand>());
+            }else{
+                std::cout << "Player command: " << str << std::endl;
+            }
         }
     }
 }
@@ -80,6 +84,10 @@ CUI::CUI(){
 CUI::~CUI(){
 
 }
+
+void CUI::setPlayer(std::shared_ptr<Player> const player){
+    this->player = player;
+};
 
 void CUI::waitCommand(Game* const game){
     std::string command;

@@ -42,6 +42,7 @@ public:
     CUI();
     ~CUI();
 
+    void setPlayer(std::shared_ptr<Player> const player);
     void waitCommand(Game* const game);
 };
 
