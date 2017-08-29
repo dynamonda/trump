@@ -69,6 +69,14 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
                         }
                     }
                     std::sort(changeNums.begin(), changeNums.end());
+                    changeNums.erase(
+                        std::remove_if(changeNums.begin(), changeNums.end(),
+                            [](int x){ return x >= 5; }),
+                        changeNums.end()
+                    );
+                    changeNums.erase(
+                        std::unique(changeNums.begin(), changeNums.end()),
+                        changeNums.end());
                     for(int index = 0; index < changeNums.size(); ++index){
                         std::cout << changeNums[index] << std::endl;
                     }
