@@ -20,16 +20,19 @@ void ExitCommand::execute(Game* const game){
     game->setEnd();
 }
 
-ChangeCommand::ChangeCommand(const std::vector<int> &changeNums){
-    std::cout << "ChangeCommand : ";
-    for(int index = 0; index < changeNums.size(); ++index){
-        std::cout << changeNums[index] << " ";
+ChangeCommand::ChangeCommand(const std::vector<int> &nums){
+    this->changeNums = std::make_unique<std::vector<int>>();
+    for(int index = 0; index < nums.size(); ++index){
+        this->changeNums->push_back(nums[index]);
     }
-    std::cout << std::endl;
 };
 
 void ChangeCommand::execute(Game* const game){
-    std::cout << "Change Command message" << std::endl;
+    std::cout << "Change Command execute : ";
+    for(int i=0; i<this->changeNums->size(); ++i){
+        std::cout << this->changeNums->at(i) << " ";
+    }
+    std::cout << std::endl;
 };
 
 Parser::Parser(std::string command, std::shared_ptr<Player> user){

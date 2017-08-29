@@ -23,9 +23,11 @@ public:
 };
 
 class ChangeCommand : public Command{
+private:
+    std::unique_ptr<std::vector<int>> changeNums;
 public:
     ChangeCommand(){};
-    ChangeCommand(const std::vector<int> &changeNums);
+    ChangeCommand(const std::vector<int> &nums);
     void execute(Game* const game);
 };
 
