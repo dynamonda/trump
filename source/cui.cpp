@@ -1,3 +1,4 @@
+#include <algorithm>
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -67,6 +68,7 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
                             std::cout << "エラーが発生しました" << std::endl;
                         }
                     }
+                    std::sort(changeNums.begin(), changeNums.end());
                     for(int index = 0; index < changeNums.size(); ++index){
                         std::cout << changeNums[index] << std::endl;
                     }
