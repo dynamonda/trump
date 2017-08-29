@@ -20,8 +20,12 @@ void ExitCommand::execute(Game* const game){
     game->setEnd();
 }
 
-ChangeCommand::ChangeCommand(){
-
+ChangeCommand::ChangeCommand(const std::vector<int> &changeNums){
+    std::cout << "ChangeCommand : ";
+    for(int index = 0; index < changeNums.size(); ++index){
+        std::cout << changeNums[index] << " ";
+    }
+    std::cout << std::endl;
 };
 
 void ChangeCommand::execute(Game* const game){
@@ -77,10 +81,7 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
                     changeNums.erase(
                         std::unique(changeNums.begin(), changeNums.end()),
                         changeNums.end());
-                    for(int index = 0; index < changeNums.size(); ++index){
-                        std::cout << changeNums[index] << std::endl;
-                    }
-                    commands.push(std::make_shared<ChangeCommand>());
+                    commands.push(std::make_shared<ChangeCommand>(changeNums));
                 }
             }else if(str == "exit"){
                 commands.push(std::make_shared<ExitCommand>());

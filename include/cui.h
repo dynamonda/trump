@@ -24,7 +24,8 @@ public:
 
 class ChangeCommand : public Command{
 public:
-    ChangeCommand();
+    ChangeCommand(){};
+    ChangeCommand(const std::vector<int> &changeNums);
     void execute(Game* const game);
 };
 
