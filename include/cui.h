@@ -10,6 +10,14 @@ public:
     virtual void execute(Game* const game) = 0;
 };
 
+class PlayerCommand : public Command{
+protected:
+    std::shared_ptr<Player> player;
+public:
+    using Command::execute;
+    virtual void execute(const Game &game, const Player &player) = 0;
+};
+
 class ShowCommand: public Command{
 public:
     ShowCommand(){};
@@ -22,14 +30,16 @@ public:
     void execute(Game* const game);
 };
 
-class ChangeCommand : public Command{
+class ChangeCommand : public PlayerCommand{
 private:
     std::unique_ptr<std::vector<int>> changeNums;
 public:
     ChangeCommand(){};
-    ChangeCommand(const std::vector<int> &nums);
+    ChangeCommand(const std::shared_ptr<Player> pl, const std::vector<int> &nums);
     void execute(Game* const game);
+    void execute(const Game &game, const Player &player);
 };
+
 
 class Parser{
 private:
