@@ -56,14 +56,19 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
         }else{
             if(str == "change"){
                 if(splitCommand.size() > 1){
+                    std::vector<int> changeNums;
                     for(int index = 1; index < splitCommand.size(); ++index){
                         try{
-                            std::cout << std::stoi(splitCommand[index]) << std::endl;
+                            int changeNum = std::stoi(splitCommand[index]);
+                            changeNums.push_back(changeNum);
                         }catch(std::invalid_argument arg){
                             std::cout << "数値を入力してください: " << splitCommand[index] << std::endl;
                         }catch(...){
                             std::cout << "エラーが発生しました" << std::endl;
                         }
+                    }
+                    for(int index = 0; index < changeNums.size(); ++index){
+                        std::cout << changeNums[index] << std::endl;
                     }
                     commands.push(std::make_shared<ChangeCommand>());
                 }
