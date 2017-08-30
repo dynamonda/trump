@@ -40,7 +40,7 @@ bool Game::setup(){
             pl->insertCard(card);
         }
 
-        pl->printHands();
+        //pl->printHands();
 
         auto hand = pl->checkHands();
         if(hand != nullptr){
@@ -55,7 +55,7 @@ bool Game::setup(){
 
 void Game::update(){
     std::cout << "Game Update" << std::endl;
-
+    players[0]->printHands();
     cui->waitCommand(this);   
 }
 

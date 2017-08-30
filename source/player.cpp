@@ -45,6 +45,10 @@ void Player::printHands(){
     }
 }
 
+void Player::discard(int id){
+    this->hands.erase(hands.begin() + id);
+}
+
 std::shared_ptr<Hand> Player::checkHands(){
     std::shared_ptr<Hand> hand = std::make_shared<Hand>(hands);
     return hand;

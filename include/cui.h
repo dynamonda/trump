@@ -3,6 +3,7 @@
 #ifndef _CUI_
 #define _CUI_
 
+class Player;
 class Game;
 
 class Command{
