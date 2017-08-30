@@ -3,7 +3,12 @@
 #ifndef _PLAYER_
 #define _PLAYER_
 
-#include <hand.h>
+#include "card.h"
+#include "hand.h"
+
+#include <string>
+#include <memory>
+#include <vector>
 
 class Player{
 private:

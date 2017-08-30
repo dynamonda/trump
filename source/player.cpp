@@ -1,13 +1,6 @@
-#include <iostream>
-#include <memory>
-#include <vector>
-#include <string>
+#include "player.h"
 
-#include <suit.h>
-#include <rank.h>
-#include <card.h>
-#include <hand.h>
-#include <player.h>
+#include <iostream>
 
 Player::Player(){
     chip = 100;
