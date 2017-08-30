@@ -23,7 +23,6 @@ void ExitCommand::execute(Game* const game){
 ChangeCommand::ChangeCommand(const std::shared_ptr<Player> &pl){
     this->player = pl;
     this->changeNums = std::make_unique<std::vector<int>>();
-    std::cout << "constructer: " << pl->getName() << std::endl;
 }
 
 ChangeCommand::ChangeCommand(const std::shared_ptr<Player> pl, 
@@ -48,7 +47,7 @@ void ChangeCommand::execute(const Game &game, const Player &player){
 }
 
 void ChangeCommand::setChangeNum(int num){
-
+    this->changeNums->push_back(num);
 }
 
 Parser::Parser(std::string command, std::shared_ptr<Player> user){
@@ -80,27 +79,30 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
         }else{
             if(str == "change"){
                 if(splitCommand.size() > 1){
+                    auto changeCommand = std::make_shared<ChangeCommand>(user);
                     std::vector<int> changeNums;
                     for(int index = 1; index < splitCommand.size(); ++index){
                         try{
                             int changeNum = std::stoi(splitCommand[index]);
-                            changeNums.push_back(changeNum);
+                            changeCommand->setChangeNum(changeNum);
                         }catch(std::invalid_argument arg){
                             std::cout << "数値を入力してください: " << splitCommand[index] << std::endl;
                         }catch(...){
                             std::cout << "エラーが発生しました" << std::endl;
                         }
                     }
-                    std::sort(changeNums.begin(), changeNums.end());
+                    //std::sort(changeNums.begin(), changeNums.end());
+                    /*
                     changeNums.erase(
                         std::remove_if(changeNums.begin(), changeNums.end(),
                             [](int x){ return x >= 5; }),
                         changeNums.end()
-                    );
+                    );*/
+                    /*
                     changeNums.erase(
                         std::unique(changeNums.begin(), changeNums.end()),
-                        changeNums.end());
-                    commands.push(std::make_shared<ChangeCommand>(user));
+                        changeNums.end());*/
+                    commands.push(changeCommand);
                 }
             }else if(str == "exit"){
                 commands.push(std::make_shared<ExitCommand>());
