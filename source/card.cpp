@@ -1,8 +1,6 @@
-#include <string>
+#include "card.h"
+
 #include <cmath>
-#include <suit.h>
-#include <rank.h>
-#include <card.h>
 
 Card::Card(int num){
     this->keyNumber = num;
