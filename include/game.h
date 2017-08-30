@@ -3,10 +3,14 @@
 #ifndef _GAME_
 #define _GAME_
 
-class Deck;
-class Player;
-class Card;
-class CUI;
+class Game;
+
+#include "cui.h"
+#include "deck.h"
+#include "player.h"
+
+#include <memory>
+#include <vector>
 
 class Game{
 private:

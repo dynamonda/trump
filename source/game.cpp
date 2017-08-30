@@ -1,17 +1,9 @@
+#include "game.h"
+
 #include <iostream>
 #include <string>
-#include <vector>
 #include <stack>
 #include <fstream>
-
-#include <cui.h>
-#include <deck.h>
-#include <player.h>
-#include <rank.h>
-#include <suit.h>
-#include <hand.h>
-#include <card.h>
-#include <game.h>
 
 Game::Game(){
     cui = std::make_unique<CUI>();

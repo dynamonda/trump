@@ -4,8 +4,8 @@
 #define _CUI_
 
 #include "deck.h"
-#include "player.h"
 #include "game.h"
+#include "player.h"
 
 #include <vector>
 #include <stack>
