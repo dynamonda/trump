@@ -35,9 +35,11 @@ private:
     std::unique_ptr<std::vector<int>> changeNums;
 public:
     ChangeCommand(){};
+    ChangeCommand(const std::shared_ptr<Player> &pl);
     ChangeCommand(const std::shared_ptr<Player> pl, const std::vector<int> &nums);
     void execute(Game* const game);
     void execute(const Game &game, const Player &player);
+    void setChangeNum(int num);
 };
 
 

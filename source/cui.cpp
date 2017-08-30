@@ -20,6 +20,12 @@ void ExitCommand::execute(Game* const game){
     game->setEnd();
 }
 
+ChangeCommand::ChangeCommand(const std::shared_ptr<Player> &pl){
+    this->player = pl;
+    this->changeNums = std::make_unique<std::vector<int>>();
+    std::cout << "constructer: " << pl->getName() << std::endl;
+}
+
 ChangeCommand::ChangeCommand(const std::shared_ptr<Player> pl, 
                              const std::vector<int> &nums) {
     this->player = pl;
@@ -39,6 +45,10 @@ void ChangeCommand::execute(Game* const game){
 
 void ChangeCommand::execute(const Game &game, const Player &player){
     std::cout << std::endl;
+}
+
+void ChangeCommand::setChangeNum(int num){
+
 }
 
 Parser::Parser(std::string command, std::shared_ptr<Player> user){
@@ -90,7 +100,7 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
                     changeNums.erase(
                         std::unique(changeNums.begin(), changeNums.end()),
                         changeNums.end());
-                    commands.push(std::make_shared<ChangeCommand>(user, changeNums));
+                    commands.push(std::make_shared<ChangeCommand>(user));
                 }
             }else if(str == "exit"){
                 commands.push(std::make_shared<ExitCommand>());
