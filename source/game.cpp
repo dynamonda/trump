@@ -40,8 +40,6 @@ bool Game::setup(){
             pl->insertCard(card);
         }
 
-        //pl->printHands();
-
         auto hand = pl->checkHands();
         if(hand != nullptr){
             std::cout << "Hand : "<< hand->ToString() << std::endl;
