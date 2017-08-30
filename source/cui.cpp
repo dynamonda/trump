@@ -47,8 +47,11 @@ void ChangeCommand::execute(const Game &game, const Player &player){
 }
 
 void ChangeCommand::setChangeNum(int num){
-    this->changeNums->push_back(num);
-    std::sort(changeNums->begin(), changeNums->end());
+    if ((num < 5) 
+            && (std::count(changeNums->begin(), changeNums->end(), num) <= 0)){
+        this->changeNums->push_back(num);
+        std::sort(changeNums->begin(), changeNums->end());
+    }
 }
 
 Parser::Parser(std::string command, std::shared_ptr<Player> user){
@@ -92,16 +95,6 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
                             std::cout << "エラーが発生しました" << std::endl;
                         }
                     }
-                    /*
-                    changeNums.erase(
-                        std::remove_if(changeNums.begin(), changeNums.end(),
-                            [](int x){ return x >= 5; }),
-                        changeNums.end()
-                    );*/
-                    /*
-                    changeNums.erase(
-                        std::unique(changeNums.begin(), changeNums.end()),
-                        changeNums.end());*/
                     commands.push(changeCommand);
                 }
             }else if(str == "exit"){
