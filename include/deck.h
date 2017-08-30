@@ -3,7 +3,10 @@
 #ifndef _DECK_
 #define _DECK_
 
-class Card;
+#include "card.h"
+
+#include <vector>
+#include <memory>
 
 class Deck{
 private:

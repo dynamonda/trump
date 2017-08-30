@@ -1,13 +1,9 @@
-#include <vector>
-#include <deck.h>
-#include <suit.h>
-#include <rank.h>
-#include <card.h>
+#include "deck.h"
+
 #include <iostream>
 #include <utility>
 #include <random>
 #include <algorithm>
-#include <memory>
 
 Deck::Deck(){
     for(int i=0; i<=52; ++i){

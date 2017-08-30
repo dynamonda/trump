@@ -3,8 +3,13 @@
 #ifndef _CUI_
 #define _CUI_
 
-class Player;
-class Game;
+#include "deck.h"
+#include "player.h"
+#include "game.h"
+
+#include <vector>
+#include <stack>
+#include <string>
 
 class Command{
 public:

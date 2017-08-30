@@ -1,14 +1,8 @@
+#include "cui.h"
+
 #include <algorithm>
 #include <iostream>
-#include <string>
 #include <sstream>
-#include <vector>
-#include <stack>
-
-#include <deck.h>
-#include <player.h>
-#include <cui.h>
-#include <game.h>
 
 void ShowCommand::execute(Game* const game){
     std::cout << "=== show deck list ===" << std::endl;
