@@ -1,10 +1,8 @@
+#include "card.h"
+#include "game.h"
+
 #include <iostream>
 #include <vector>
-
-#include <suit.h>
-#include <rank.h>
-#include <card.h>
-#include <game.h>
 
 int main(){
 	std::unique_ptr<Game> game = std::make_unique<Game>();
