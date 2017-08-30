@@ -3,6 +3,8 @@
 #ifndef _CUI_
 #define _CUI_
 
+class CUI;
+
 #include "deck.h"
 #include "game.h"
 #include "player.h"
