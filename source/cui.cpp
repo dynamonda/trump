@@ -48,6 +48,7 @@ void ChangeCommand::execute(const Game &game, const Player &player){
 
 void ChangeCommand::setChangeNum(int num){
     this->changeNums->push_back(num);
+    std::sort(changeNums->begin(), changeNums->end());
 }
 
 Parser::Parser(std::string command, std::shared_ptr<Player> user){
@@ -91,7 +92,6 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
                             std::cout << "エラーが発生しました" << std::endl;
                         }
                     }
-                    //std::sort(changeNums.begin(), changeNums.end());
                     /*
                     changeNums.erase(
                         std::remove_if(changeNums.begin(), changeNums.end(),
