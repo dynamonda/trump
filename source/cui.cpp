@@ -25,15 +25,6 @@ ChangeCommand::ChangeCommand(const std::shared_ptr<Player> &pl){
     this->changeNums = std::make_unique<std::vector<int>>();
 }
 
-ChangeCommand::ChangeCommand(const std::shared_ptr<Player> pl, 
-                             const std::vector<int> &nums) {
-    this->player = pl;
-    this->changeNums = std::make_unique<std::vector<int>>();
-    for(int index = 0; index < nums.size(); ++index){
-        this->changeNums->push_back(nums[index]);
-    }
-};
-
 void ChangeCommand::execute(Game* const game){
     std::cout << "Change Command execute : ";
     for(int i=0; i<this->changeNums->size(); ++i){
@@ -84,7 +75,6 @@ Parser::Parser(std::string command, std::shared_ptr<Player> user){
             if(str == "change"){
                 if(splitCommand.size() > 1){
                     auto changeCommand = std::make_shared<ChangeCommand>(user);
-                    std::vector<int> changeNums;
                     for(int index = 1; index < splitCommand.size(); ++index){
                         try{
                             int changeNum = std::stoi(splitCommand[index]);
