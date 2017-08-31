@@ -21,6 +21,7 @@ ChangeCommand::ChangeCommand(const std::shared_ptr<Player> &pl){
 
 void ChangeCommand::execute(Game* const game){
     std::cout << "Change Command execute : ";
+    std::reverse(this->changeNums->begin(), this->changeNums->end());
     for(int i=0; i<this->changeNums->size(); ++i){
         int num = this->changeNums->at(i);
         std::cout << num << " ";
