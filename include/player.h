@@ -25,6 +25,8 @@ public:
     void insertCard(std::shared_ptr<Card> card);
     int getHandsSize();
     void printHands();
+
+    void draw();
     void discard(int id);
     
     std::shared_ptr<Hand> checkHands();

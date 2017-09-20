@@ -38,6 +38,10 @@ void Player::printHands(){
     }
 }
 
+void Player::draw(){
+    std::cout << "draw a card" << std::endl;
+}
+
 void Player::discard(int id){
     std::cout << this->name << " : discard : " << this->hands[id]->getInfoString()
         << std::endl;

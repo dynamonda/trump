@@ -20,12 +20,15 @@ ChangeCommand::ChangeCommand(const std::shared_ptr<Player> &pl){
 }
 
 void ChangeCommand::execute(Game* const game){
-    std::cout << "Change Command execute : ";
+    std::cout << "Change Command execute:" << std::endl;
     std::reverse(this->changeNums->begin(), this->changeNums->end());
     for(int i=0; i<this->changeNums->size(); ++i){
         int num = this->changeNums->at(i);
         std::cout << num << " ";
         this->player->discard(num);
+    }
+    for(int i=0; i<this->changeNums->size(); ++i){
+        this->player->draw();
     }
     std::cout << std::endl;
 };
