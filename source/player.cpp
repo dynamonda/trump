@@ -36,6 +36,8 @@ void Player::printHands(){
         std::cout << "[" << id << "]:" << card->getInfoString() << std::endl;
         ++id;
     }
+    auto chand = checkHands();
+    std::cout << "  -> " << chand->ToString() << std::endl;
 }
 
 void Player::discard(int id){
