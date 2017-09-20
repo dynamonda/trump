@@ -39,9 +39,8 @@ void Player::printHands(){
 }
 
 void Player::discard(int id){
-    // 一旦手札をコピーしないとズレが生じる
-    // hand{ 20, 43, 21, 47, 76} -> erase(0,3)
-    // [0]の20を捨てた後に、[3]の位置がずれて本来は47を捨てたいのに、76が捨てられてしまう
+    std::cout << this->name << " : discard : " << this->hands[id]->getInfoString()
+        << std::endl;
     this->hands.erase(hands.begin() + id);
 }
 
