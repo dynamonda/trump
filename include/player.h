@@ -26,7 +26,6 @@ public:
     int getHandsSize();
     void printHands();
 
-    void draw();
     void discard(int id);
     
     std::shared_ptr<Hand> checkHands();

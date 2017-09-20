@@ -28,7 +28,8 @@ void ChangeCommand::execute(Game* const game){
         this->player->discard(num);
     }
     for(int i=0; i<this->changeNums->size(); ++i){
-        this->player->draw();
+        auto card = game->deck->draw();
+        this->player->insertCard(card);
     }
     std::cout << std::endl;
 };
