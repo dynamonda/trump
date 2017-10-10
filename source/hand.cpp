@@ -20,6 +20,8 @@ Hand::Hand(std::vector<std::shared_ptr<Card>> cardList){
         this->handName = HandName::FLUSH;
     }else if(IsStraight(cardList)){
         this->handName = HandName::STRAIGHT;
+    }else if(IsThreeOfaKind(cardList)){
+        this->handName = HandName::THREE_OF_A_KIND;
     }else if(IsTwoPair(cardList)){
         this->handName = HandName::TWO_PAIR;
     }else if(IsOnePair(cardList)){
@@ -112,6 +114,20 @@ bool Hand::IsStraight(std::vector<std::shared_ptr<Card>> cardList){
 }
 
 bool Hand::IsThreeOfaKind(std::vector<std::shared_ptr<Card>> cardList){
+    std::map<Rank,int> counter;
+    for(auto card: cardList){
+        Rank rank = card->getRank();
+        counter[rank] += 1;
+    }
+    int threshold = 3;
+    if(counter[Rank::JOKER] >= 1){
+        threshold -= 1;
+    }
+    for(auto i = counter.begin(); i != counter.end(); ++i){
+        if(i->second >= threshold){
+            return true;
+        }
+    }
     return false;
 }
 
@@ -177,6 +193,8 @@ std::string Hand::ToString(){
             return "Flush";
         case HandName::STRAIGHT:
             return "Straight";
+        case HandName::THREE_OF_A_KIND:
+            return "Three of a kind";
         case HandName::TWO_PAIR:
             return "Two Pair";
         case HandName::ONE_PAIR:
