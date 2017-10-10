@@ -20,6 +20,8 @@ Hand::Hand(std::vector<std::shared_ptr<Card>> cardList){
         this->handName = HandName::FLUSH;
     }else if(IsStraight(cardList)){
         this->handName = HandName::STRAIGHT;
+    }else if(IsTwoPair(cardList)){
+        this->handName = HandName::TWO_PAIR;
     }else if(IsOnePair(cardList)){
         this->handName = HandName::ONE_PAIR;
     }else{
@@ -114,7 +116,22 @@ bool Hand::IsThreeOfaKind(std::vector<std::shared_ptr<Card>> cardList){
 }
 
 bool Hand::IsTwoPair(std::vector<std::shared_ptr<Card>> cardList){
-    return false;
+    std::map<Rank,int> counter;
+    for(auto card : cardList){
+        Rank rank = card->getRank();
+        counter[rank] += 1;
+    }
+    int two_count = 0;
+    for(auto i = counter.begin(); i != counter.end(); ++i){
+        if(i->second >= 2){
+            two_count += 1;
+        }
+    }
+    if(two_count >=2 ){
+        return true;
+    }else{
+        return false;
+    }
 }
     
 bool Hand::IsOnePair(std::vector<std::shared_ptr<Card>> cardList){
@@ -156,6 +173,12 @@ std::string Hand::ToString(){
     switch(this->handName){
         case HandName::ROYAL_FLUSH:
             return "Royal Flush";
+        case HandName::FLUSH:
+            return "Flush";
+        case HandName::STRAIGHT:
+            return "Straight";
+        case HandName::TWO_PAIR:
+            return "Two Pair";
         case HandName::ONE_PAIR:
             return "One Pair";
         case HandName::NO_PAIR:
