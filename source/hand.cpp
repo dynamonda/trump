@@ -16,6 +16,8 @@ Hand::Hand(){
 Hand::Hand(std::vector<std::shared_ptr<Card>> cardList){
     if(IsRoyalFlush(cardList)){
         this->handName = HandName::ROYAL_FLUSH;
+    }else if(IsFourOfaKind(cardList)){
+        this->handName = HandName::FOUR_OF_A_KIND;
     }else if(IsFullHouse(cardList)){
         this->handName = HandName::FULL_HOUSE;
     }else if(IsFlush(cardList)){
@@ -46,6 +48,32 @@ bool Hand::IsStraightFlush(std::vector<std::shared_ptr<Card>> cardList){
 }
 
 bool Hand::IsFourOfaKind(std::vector<std::shared_ptr<Card>> cardList){
+    std::map<Rank, int> cardMap;
+    for(auto card: cardList){
+        int num = cardMap[card->getRank()];
+        cardMap[card->getRank()] = ++num;
+    }
+    if(IsJoker(cardList)){
+        int count = 0;
+        for(auto i = cardMap.begin(); i!=cardMap.end(); i++){
+            if(i->second == 3){
+                ++count;
+            }
+        }
+        if(count == 1){
+            return true;
+        }
+    }else{
+        int count = 0;
+        for(auto i = cardMap.begin(); i!=cardMap.end(); i++){
+            if(i->second == 4){
+                ++count;
+            }
+        }
+        if(count == 1){
+            return true;
+        }
+    }
     return false;
 }
 
@@ -222,6 +250,8 @@ std::string Hand::ToString(){
     switch(this->handName){
         case HandName::ROYAL_FLUSH:
             return "Royal Flush";
+        case HandName::FOUR_OF_A_KIND:
+            return "Four of a kind";
         case HandName::FULL_HOUSE:
             return "Full House";
         case HandName::FLUSH:
