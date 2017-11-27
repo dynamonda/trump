@@ -42,6 +42,24 @@ Hand::~Hand(){
 }
 
 bool Hand::IsRoyalFlush(std::vector<std::shared_ptr<Card>> cardList){
+    if(IsFlush(cardList)){
+        std::map<Rank, int> cardMap;
+        for(auto card: cardList){
+            int num = cardMap[card->getRank()];
+            cardMap[card->getRank()] = ++num;
+        }
+        int count = cardMap[Rank::TEN] + cardMap[Rank::JACK] + cardMap[Rank::QUEEN]
+            + cardMap[Rank::KING] + cardMap[Rank::ACE];
+        if(IsJoker(cardList)){
+            if(count == 4){
+                return true;
+            }
+        }else{
+            if(count == 5){
+                return true;
+            }
+        }
+    }
     return false;
 }
 
