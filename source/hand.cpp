@@ -140,41 +140,29 @@ bool Hand::IsStraight(std::vector<std::shared_ptr<Card>> cardList){
         Rank::SEVEN, Rank::EIGHT, Rank::NINE, Rank::TEN, Rank::JACK,
         Rank::QUEEN, Rank::KING, Rank::ACE
     };
-    //for(auto itr=straightList.begin(); itr!=straightList.end(); ++itr){
-        //std::cout << "LIST:" << (int)(*itr) << std::endl;
-    //}
+
     std::map<Rank, int> cardMap;
     for(auto card : cardList){
         int num = cardMap[card->getRank()];
         cardMap[card->getRank()] = ++num;
     }
-    /*for(auto itr=cardMap.begin(); itr!=cardMap.end(); ++itr){
-        std::cout << "Key:" << (int)(itr->first) <<
-            " Value:" << itr->second << std::endl;
-    }*/
-    int count = 0;
+
     bool useSkip = false;
     if(IsJoker(cardList)){
         useSkip = true;
     }
-    for(auto itr=straightList.begin(); itr!=straightList.end(); ++itr){
-        if(count <= 0){
-            if(cardMap[*itr] > 0){
-                ++count;
-            }
-        } else {
-            if(cardMap[*itr] <= 0){
-                if(count < 5){
-                    count = 0;
-                }
-            }else if(useSkip){
-                useSkip = false;
+    for(auto itr=straightList.begin(); itr!=straightList.end()-4; ++itr){
+        int count = 0;
+        for(int j=0; j<5; ++j){
+            if(cardMap[*(itr+j)] > 0){
                 ++count;
             }
         }
-    }
-    if((count >= 5)||(useSkip && count >= 4)){
-        return true;
+        if(useSkip && count==4){
+            return true;
+        }else if(count == 5){
+            return true;
+        }
     }
     return false;
 }
