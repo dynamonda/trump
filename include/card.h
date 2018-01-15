@@ -1,16 +1,18 @@
 // card.h
 
-#ifndef _CARD_
-#define _CARD_
+#ifndef TRUMP_INCLUDE_CARD_H_
+#define TRUMP_INCLUDE_CARD_H_
+
+#include <string>
 
 #include "suit.h"
 #include "rank.h"
 
-#include <string>
-
+// トランプ1枚を表すクラス
 class Card{
 private:
-    int keyNumber;
+    int number_;
+
 public:
     Card(int num);
     ~Card();

@@ -1,9 +1,11 @@
+// card.cpp
+
 #include "card.h"
 
 #include <cmath>
 
 Card::Card(int num){
-    this->keyNumber = num;
+    this->number_ = num;
 }
 
 Card::~Card(){
@@ -11,14 +13,14 @@ Card::~Card(){
 }
 
 int Card::getNumber(){
-    return this->keyNumber;
+    return this->number_;
 }
 
 Suit Card::getSuit(){
-    if(keyNumber==0){
+    if(number_==0){
         return Suit::Joker;
     } else {
-        return Suit(std::ceil(keyNumber / 14.0));
+        return Suit(std::ceil(number_ / 14.0));
     }
 }
 
@@ -40,10 +42,10 @@ std::string Card::getSuitString(){
 }
 
 Rank Card::getRank(){
-    if(keyNumber==0){
+    if(number_ == 0){
         return Rank::JOKER;
     } else {
-        int num = this->keyNumber;
+        int num = this->number_;
         while(num > 13){
             num = num - 13;
         }
