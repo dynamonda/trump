@@ -1,7 +1,7 @@
 // player.h
 
-#ifndef _PLAYER_
-#define _PLAYER_
+#ifndef TRUMP_INCLUDE_PLAYER_H_
+#define TRUMP_INCLUDE_PLAYER_H_
 
 #include "card.h"
 #include "hand.h"

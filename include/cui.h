@@ -1,7 +1,7 @@
 // cui.h
 
-#ifndef _CUI_
-#define _CUI_
+#ifndef TRUMP_INCLUDE_CUI_H_
+#define TRUMP_INCLUDE_CUI_H_
 
 class CUI;
 

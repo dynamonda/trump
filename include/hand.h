@@ -1,7 +1,7 @@
 // hand.h
 
-#ifndef _HAND_
-#define _HAND_
+#ifndef TRUMP_INCLUDE_HAND_H_
+#define TRUMP_INCLUDE_HAND_H_
 
 enum class HandName : int {
     ROYAL_FLUSH     = 0,
