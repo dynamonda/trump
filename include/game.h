@@ -1,16 +1,16 @@
 // game.h
 
-#ifndef _GAME_
-#define _GAME_
+#ifndef TRUMP_INCLUDE_GAME_H_
+#define TRUMP_INCLUDE_GAME_H_
 
 class Game;
+
+#include <memory>
+#include <vector>
 
 #include "cui.h"
 #include "deck.h"
 #include "player.h"
-
-#include <memory>
-#include <vector>
 
 class Game{
 private:
