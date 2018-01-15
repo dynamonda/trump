@@ -1,13 +1,18 @@
 // deck.h
 
-#ifndef _DECK_
-#define _DECK_
+#ifndef TRUMP_INCLUDE_DECK_H_
+#define TRUMP_INCLUDE_DECK_H_
 
 #include "card.h"
 
 #include <vector>
 #include <memory>
+#include <iostream>
+#include <utility>
+#include <random>
+#include <algorithm>
 
+// 山札（カードの束）を表すクラス
 class Deck{
 private:
     int number;

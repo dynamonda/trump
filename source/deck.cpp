@@ -1,10 +1,5 @@
 #include "deck.h"
 
-#include <iostream>
-#include <utility>
-#include <random>
-#include <algorithm>
-
 Deck::Deck(){
     for(int i=0; i<=52; ++i){
         auto card = std::make_shared<Card>(i);
