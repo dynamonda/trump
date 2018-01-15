@@ -1,8 +1,9 @@
 // rank.h
 
-#ifndef _RANK_
-#define _RANK_
+#ifndef TRUMP_INCLUDE_RANK_H_
+#define TRUMP_INCLUDE_RANK_H_
 
+// トランプの数を表すクラス
 enum class Rank : int{
     JOKER   = 0,
     ACE     = 1,
